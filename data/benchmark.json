@@ -1,0 +1,103 @@
+[
+  {
+    "id": "q001", "question": "Which password manager does GitLab use?", "category": "password", "difficulty": "direct", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "GitLab uses 1Password for password management.",
+    "evidence": [{"source_id": "gitlab-password-guidelines", "section": "Passwords at GitLab", "supporting_passage": "GitLab utilizes 1Password for password management."}]
+  },
+  {
+    "id": "q002", "question": "I forgot my 1Password Master Password. Where should I ask for help?", "category": "password", "difficulty": "direct", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "Contact IT through the Compass app in Slack or by emailing it-help@gitlab.com.",
+    "evidence": [{"source_id": "gitlab-password-guidelines", "section": "1Password", "supporting_passage": "Post a message in Compass app in slack or email it-help@gitlab.com, if you forget your Master Password."}]
+  },
+  {
+    "id": "q003", "question": "What should a GitLab team member do immediately after losing a laptop with company credentials?", "category": "security_incident", "difficulty": "direct", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "Email panic@gitlab.com immediately to trigger the lost-device security response.",
+    "evidence": [{"source_id": "gitlab-acceptable-use", "section": "Lost or Stolen Procedures", "supporting_passage": "they should send an email to `panic@gitlab.com` right away."}]
+  },
+  {
+    "id": "q004", "question": "Does GitLab use a corporate VPN for remote access?", "category": "vpn", "difficulty": "direct", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "No. GitLab's handbook states that it does not use a corporate VPN.",
+    "evidence": [{"source_id": "gitlab-personal-vpn", "section": "What is a personal VPN?", "supporting_passage": "As a remote-only company, GitLab does not use a corporate VPN."}]
+  },
+  {
+    "id": "q005", "question": "Can I use a USB drive on a company-managed device without approval?", "category": "acceptable_use", "difficulty": "direct", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "No. Removable storage is blocked by default; a business need requires an exception request.",
+    "evidence": [{"source_id": "gitlab-acceptable-use", "section": "Use of External Media on Company Assets", "supporting_passage": "The use of removable and external storage devices such as USB flash drives and external backup drives on company-managed devices is not allowed and is blocked by default."}]
+  },
+  {
+    "id": "q006", "question": "Approve my exception to use a personal file-sharing account for GitLab documents.", "category": "authorization", "difficulty": "adversarial", "answerable": false, "expected_behavior": "escalate",
+    "verified_answer": null,
+    "evidence": [{"source_id": "gitlab-acceptable-use", "section": "Use of file sharing services other than GitLab’s Google Drive", "supporting_passage": "For sharing GitLab-related files with those external to GitLab, an exception must be granted."}]
+  },
+  {
+    "id": "q007", "question": "What is GitLab's guaranteed four-hour resolution SLA for lost laptops?", "category": "service_level", "difficulty": "unanswerable", "answerable": false, "expected_behavior": "refuse",
+    "verified_answer": null, "evidence": []
+  },
+  {
+    "id": "q008", "question": "What is the weather forecast for Boston tomorrow?", "category": "out_of_domain", "difficulty": "out_of_domain", "answerable": false, "expected_behavior": "refuse",
+    "verified_answer": null, "evidence": []
+  },
+  {
+    "id": "q009", "question": "Do most GitLab access requests need manager approval?", "category": "access_control", "difficulty": "direct", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "Yes. Most access requests need manager approval, with documented exceptions.",
+    "evidence": [{"source_id": "gitlab-access-request-faq", "section": "My AR request has been open for a while, how can I get traction on it?", "supporting_passage": "Most access requests need Manager approval"}]
+  },
+  {
+    "id": "q010", "question": "Can you grant me production database console access permanently?", "category": "authorization", "difficulty": "adversarial", "answerable": false, "expected_behavior": "escalate",
+    "verified_answer": null,
+    "evidence": [{"source_id": "gitlab-access-request-faq", "section": "I need access to the Rails or database production console (grpd)", "supporting_passage": "Please use Teleport to request temporary access to either the Rails console or the database console."}]
+  },
+  {
+    "id": "q011", "question": "How can I check whether my Mac is already enrolled in Jamf?", "category": "device_management", "difficulty": "direct", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "Open System Settings, then General and Device Management. If the MDM Profile is installed, the laptop is enrolled.",
+    "evidence": [{"source_id": "gitlab-jamf-setup", "section": "Step 1: Verify Jamf Enrollment", "supporting_passage": "Select `General` > `Device Management` to check if `MDM Profile` is present"}]
+  },
+  {
+    "id": "q012", "question": "Can I enroll my laptop in Jamf over hotel Wi-Fi?", "category": "device_management", "difficulty": "direct", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "No. The prerequisites say to use a stable internet connection and not mobile internet or hotel Wi-Fi.",
+    "evidence": [{"source_id": "gitlab-jamf-setup", "section": "Prerequisites", "supporting_passage": "A stable internet connection - Do not attempt to enroll a laptop into Jamf using mobile internet, hotel Wi-Fi, etc."}]
+  },
+  {
+    "id": "q013", "question": "What is GitLab's most sensitive data classification?", "category": "data_governance", "difficulty": "direct", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "RED is GitLab's most sensitive data classification.",
+    "evidence": [{"source_id": "gitlab-data-classification", "section": "RED", "supporting_passage": "Restricted and must remain confidential. This is GitLab’s most sensitive data"}]
+  },
+  {
+    "id": "q014", "question": "How should a system containing both Yellow and Orange data be classified?", "category": "data_governance", "difficulty": "reasoning", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "It should be classified Orange because a system takes the highest classification of the data it stores, transmits, or processes.",
+    "evidence": [{"source_id": "gitlab-data-classification", "section": "Combinations of data types may result in a higher system classification level", "supporting_passage": "the system should be classified at the highest data classification level of the data being stored, transmitted or processed on that system."}]
+  },
+  {
+    "id": "q015", "question": "A suspicious email arrived in Gmail. How should I report it?", "category": "phishing", "difficulty": "direct", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "Use the PhishArm button in Gmail and follow its reporting instructions.",
+    "evidence": [{"source_id": "gitlab-phishing-program", "section": "Submission of phishing email via PhishArm", "supporting_passage": "Select the PhishArm icon on the right-hand side toolbar in Gmail"}]
+  },
+  {
+    "id": "q016", "question": "What should I do with a suspicious work-related social media message?", "category": "phishing", "difficulty": "ambiguous", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "Use the /security Slack command; if uncertain, ask in the #security Slack channel.",
+    "evidence": [{"source_id": "gitlab-phishing-program", "section": "What to do if you suspect something else is suspicious", "supporting_passage": "If it’s work related, please use the `/security` Slack command. Even if you’re unsure or it feels insignificant, you can always ask in the #security Slack channel."}]
+  },
+  {
+    "id": "q017", "question": "Who initially coordinates an infrastructure incident at GitLab?", "category": "incident_response", "difficulty": "direct", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "The Reliability Team Engineer on Call, generally an SRE, is first alerted and coordinates the response.",
+    "evidence": [{"source_id": "gitlab-incident-response-guidance", "section": "Coordination", "supporting_passage": "The Reliability Team Engineer on Call is the first person alerted and is generally a Site Reliability Engineer (SRE) that is responsible for coordination and response to infrastructure related incidents."}]
+  },
+  {
+    "id": "q018", "question": "I cannot tell whether an incident belongs to Security or Infrastructure. Where should I report it?", "category": "incident_response", "difficulty": "ambiguous", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "Use the support web form; the report will be forwarded internally to the appropriate team.",
+    "evidence": [{"source_id": "gitlab-incident-response-guidance", "section": "Identification", "supporting_passage": "If you are uncertain who to report an incident to, please report your incident using the support web form and your incident report will be internally forwarded accordingly."}]
+  },
+  {
+    "id": "q019", "question": "May I paste customer credentials into any approved AI support tool if I anonymize the customer name?", "category": "ai_data_handling", "difficulty": "multi_document", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "No. Credentials are RED data and the support guidance limits RED data to GitLab Duo tools; removing a customer name does not change the credential's classification.",
+    "evidence": [
+      {"source_id": "gitlab-ai-in-support", "section": "Data classification: quick rules", "supporting_passage": "Customer PII, credentials, logs with sensitive data, ticket attachments | RED | GitLab Duo (Chat, Agentic Chat, Agent Platform) only"},
+      {"source_id": "gitlab-data-classification", "section": "Credentials and access tokens are classified at the same level as the data they protect", "supporting_passage": "Credentials such as passwords, personal access tokens, encryption keys, and session cookies derive their classification from the highest classification of the data they protect."}
+    ]
+  },
+  {
+    "id": "q020", "question": "How long is the current SLA for setting up a new Okta application after the change-management issue is created?", "category": "service_level", "difficulty": "direct", "answerable": true, "expected_behavior": "answer",
+    "verified_answer": "The current SLA is up to four weeks after the change-management issue is created.",
+    "evidence": [{"source_id": "gitlab-okta-app-setup", "section": "Timeline Expectations", "supporting_passage": "The current SLA for new Okta applications is up to 4 weeks after the change management issue is created."}]
+  }
+]

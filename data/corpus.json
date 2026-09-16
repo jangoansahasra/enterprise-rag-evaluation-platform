@@ -1,0 +1,116 @@
+[
+  {
+    "id": "gitlab-acceptable-use::Lost or Stolen Procedures",
+    "source_id": "gitlab-acceptable-use",
+    "section": "Lost or Stolen Procedures",
+    "text": "they should send an email to `panic@gitlab.com` right away."
+  },
+  {
+    "id": "gitlab-acceptable-use::Use of External Media on Company Assets",
+    "source_id": "gitlab-acceptable-use",
+    "section": "Use of External Media on Company Assets",
+    "text": "The use of removable and external storage devices such as USB flash drives and external backup drives on company-managed devices is not allowed and is blocked by default."
+  },
+  {
+    "id": "gitlab-acceptable-use::Use of file sharing services other than GitLab’s Google Drive",
+    "source_id": "gitlab-acceptable-use",
+    "section": "Use of file sharing services other than GitLab’s Google Drive",
+    "text": "For sharing GitLab-related files with those external to GitLab, an exception must be granted."
+  },
+  {
+    "id": "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)",
+    "source_id": "gitlab-access-request-faq",
+    "section": "I need access to the Rails or database production console (grpd)",
+    "text": "Please use Teleport to request temporary access to either the Rails console or the database console."
+  },
+  {
+    "id": "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?",
+    "source_id": "gitlab-access-request-faq",
+    "section": "My AR request has been open for a while, how can I get traction on it?",
+    "text": "Most access requests need Manager approval"
+  },
+  {
+    "id": "gitlab-ai-in-support::Data classification: quick rules",
+    "source_id": "gitlab-ai-in-support",
+    "section": "Data classification: quick rules",
+    "text": "Customer PII, credentials, logs with sensitive data, ticket attachments | RED | GitLab Duo (Chat, Agentic Chat, Agent Platform) only"
+  },
+  {
+    "id": "gitlab-data-classification::Combinations of data types may result in a higher system classification level",
+    "source_id": "gitlab-data-classification",
+    "section": "Combinations of data types may result in a higher system classification level",
+    "text": "the system should be classified at the highest data classification level of the data being stored, transmitted or processed on that system."
+  },
+  {
+    "id": "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect",
+    "source_id": "gitlab-data-classification",
+    "section": "Credentials and access tokens are classified at the same level as the data they protect",
+    "text": "Credentials such as passwords, personal access tokens, encryption keys, and session cookies derive their classification from the highest classification of the data they protect."
+  },
+  {
+    "id": "gitlab-data-classification::RED",
+    "source_id": "gitlab-data-classification",
+    "section": "RED",
+    "text": "Restricted and must remain confidential. This is GitLab’s most sensitive data"
+  },
+  {
+    "id": "gitlab-incident-response-guidance::Coordination",
+    "source_id": "gitlab-incident-response-guidance",
+    "section": "Coordination",
+    "text": "The Reliability Team Engineer on Call is the first person alerted and is generally a Site Reliability Engineer (SRE) that is responsible for coordination and response to infrastructure related incidents."
+  },
+  {
+    "id": "gitlab-incident-response-guidance::Identification",
+    "source_id": "gitlab-incident-response-guidance",
+    "section": "Identification",
+    "text": "If you are uncertain who to report an incident to, please report your incident using the support web form and your incident report will be internally forwarded accordingly."
+  },
+  {
+    "id": "gitlab-jamf-setup::Prerequisites",
+    "source_id": "gitlab-jamf-setup",
+    "section": "Prerequisites",
+    "text": "A stable internet connection - Do not attempt to enroll a laptop into Jamf using mobile internet, hotel Wi-Fi, etc."
+  },
+  {
+    "id": "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment",
+    "source_id": "gitlab-jamf-setup",
+    "section": "Step 1: Verify Jamf Enrollment",
+    "text": "Select `General` > `Device Management` to check if `MDM Profile` is present"
+  },
+  {
+    "id": "gitlab-okta-app-setup::Timeline Expectations",
+    "source_id": "gitlab-okta-app-setup",
+    "section": "Timeline Expectations",
+    "text": "The current SLA for new Okta applications is up to 4 weeks after the change management issue is created."
+  },
+  {
+    "id": "gitlab-password-guidelines::1Password",
+    "source_id": "gitlab-password-guidelines",
+    "section": "1Password",
+    "text": "Post a message in Compass app in slack or email it-help@gitlab.com, if you forget your Master Password."
+  },
+  {
+    "id": "gitlab-password-guidelines::Passwords at GitLab",
+    "source_id": "gitlab-password-guidelines",
+    "section": "Passwords at GitLab",
+    "text": "GitLab utilizes 1Password for password management."
+  },
+  {
+    "id": "gitlab-personal-vpn::What is a personal VPN?",
+    "source_id": "gitlab-personal-vpn",
+    "section": "What is a personal VPN?",
+    "text": "As a remote-only company, GitLab does not use a corporate VPN."
+  },
+  {
+    "id": "gitlab-phishing-program::Submission of phishing email via PhishArm",
+    "source_id": "gitlab-phishing-program",
+    "section": "Submission of phishing email via PhishArm",
+    "text": "Select the PhishArm icon on the right-hand side toolbar in Gmail"
+  },
+  {
+    "id": "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+    "source_id": "gitlab-phishing-program",
+    "section": "What to do if you suspect something else is suspicious",
+    "text": "If it’s work related, please use the `/security` Slack command. Even if you’re unsure or it feels insignificant, you can always ask in the #security Slack channel."
+  }
+]

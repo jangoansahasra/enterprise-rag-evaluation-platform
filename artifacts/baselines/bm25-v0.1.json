@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-09-15T23:03:17.423305+00:00",
+  "configuration": {
+    "retriever": "bm25",
+    "top_k": 3
+  },
+  "summary": {
+    "evaluated_questions": 5,
+    "recall_at_3": 1.0,
+    "mean_reciprocal_rank": 0.6
+  },
+  "questions": [
+    {
+      "question_id": "q001",
+      "category": "password",
+      "relevant_chunk_ids": [
+        "gitlab-password-guidelines::Passwords at GitLab"
+      ],
+      "retrieved_chunk_ids": [
+        "gitlab-personal-vpn::What is a personal VPN?",
+        "gitlab-password-guidelines::Passwords at GitLab",
+        "gitlab-password-guidelines::1Password"
+      ],
+      "first_relevant_rank": 2
+    },
+    {
+      "question_id": "q002",
+      "category": "password",
+      "relevant_chunk_ids": [
+        "gitlab-password-guidelines::1Password"
+      ],
+      "retrieved_chunk_ids": [
+        "gitlab-password-guidelines::Passwords at GitLab",
+        "gitlab-password-guidelines::1Password",
+        "gitlab-acceptable-use::Lost or Stolen Procedures"
+      ],
+      "first_relevant_rank": 2
+    },
+    {
+      "question_id": "q003",
+      "category": "security_incident",
+      "relevant_chunk_ids": [
+        "gitlab-acceptable-use::Lost or Stolen Procedures"
+      ],
+      "retrieved_chunk_ids": [
+        "gitlab-personal-vpn::What is a personal VPN?",
+        "gitlab-acceptable-use::Lost or Stolen Procedures",
+        "gitlab-password-guidelines::1Password"
+      ],
+      "first_relevant_rank": 2
+    },
+    {
+      "question_id": "q004",
+      "category": "vpn",
+      "relevant_chunk_ids": [
+        "gitlab-personal-vpn::What is a personal VPN?"
+      ],
+      "retrieved_chunk_ids": [
+        "gitlab-personal-vpn::What is a personal VPN?",
+        "gitlab-password-guidelines::Passwords at GitLab",
+        "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive"
+      ],
+      "first_relevant_rank": 1
+    },
+    {
+      "question_id": "q005",
+      "category": "acceptable_use",
+      "relevant_chunk_ids": [
+        "gitlab-acceptable-use::Use of External Media on Company Assets"
+      ],
+      "retrieved_chunk_ids": [
+        "gitlab-personal-vpn::What is a personal VPN?",
+        "gitlab-acceptable-use::Use of External Media on Company Assets",
+        "gitlab-password-guidelines::1Password"
+      ],
+      "first_relevant_rank": 2
+    }
+  ]
+}

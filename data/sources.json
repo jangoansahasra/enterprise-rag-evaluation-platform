@@ -1,0 +1,92 @@
+[
+  {
+    "id": "gitlab-password-guidelines",
+    "title": "GitLab Password Guidelines",
+    "url": "https://handbook.gitlab.com/handbook/security/password-guidelines/",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0",
+    "checked_date": "2026-09-13",
+    "sections": ["Passwords at GitLab", "1Password", "1Password guidelines"]
+  },
+  {
+    "id": "gitlab-acceptable-use",
+    "title": "GitLab Internal Acceptable Use Policy",
+    "url": "https://handbook.gitlab.com/handbook/people-group/acceptable-use-policy/",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0",
+    "checked_date": "2026-09-13",
+    "sections": ["Lost or Stolen Procedures", "Use of External Media on Company Assets", "Use of file sharing services other than GitLab’s Google Drive", "Exceptions"]
+  },
+  {
+    "id": "gitlab-personal-vpn",
+    "title": "Personal VPN",
+    "url": "https://handbook.gitlab.com/handbook/tools-and-tips/personal-vpn/",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0",
+    "checked_date": "2026-09-13",
+    "sections": ["What is a personal VPN?", "Why would a GitLab team member use one?", "Important tips"]
+  },
+  {
+    "id": "gitlab-access-request-faq",
+    "title": "Access Requests (AR) FAQs",
+    "url": "https://handbook.gitlab.com/handbook/security/corporate/end-user-services/onboarding-access-requests/access-requests/frequently-asked-questions/",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0",
+    "checked_date": "2026-09-16",
+    "sections": ["My AR request has been open for a while, how can I get traction on it?", "So you need access to a system or a group/vault?", "Do I need manager approval? Sometimes", "I need access to the Rails or database production console (grpd)"]
+  },
+  {
+    "id": "gitlab-jamf-setup",
+    "title": "Jamf MDM Setup Guide",
+    "url": "https://handbook.gitlab.com/handbook/security/corporate/systems/jamf/setup/",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0",
+    "checked_date": "2026-09-16",
+    "sections": ["Manual Enrollment", "Prerequisites", "Step 1: Verify Jamf Enrollment", "Step 2: Enrollment"]
+  },
+  {
+    "id": "gitlab-data-classification",
+    "title": "GitLab Data Classification Standard",
+    "url": "https://handbook.gitlab.com/handbook/security/policies_and_standards/data-classification-standard/",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0",
+    "checked_date": "2026-09-16",
+    "sections": ["GitLab Responsibilities", "Sharing of Customer-provided data within GitLab", "RED", "ORANGE", "YELLOW", "GREEN", "Credentials and access tokens are classified at the same level as the data they protect", "Combinations of data types may result in a higher system classification level"]
+  },
+  {
+    "id": "gitlab-phishing-program",
+    "title": "Phishing Program",
+    "url": "https://handbook.gitlab.com/handbook/security/security-assurance/governance/phishing/",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0",
+    "checked_date": "2026-09-16",
+    "sections": ["Submission of phishing email via PhishArm", "Manual submission of phishing email to phishing@gitlab.com", "CEO & Executive Fraud", "What to do if you suspect something else is suspicious"]
+  },
+  {
+    "id": "gitlab-incident-response-guidance",
+    "title": "Incident Response Guidance",
+    "url": "https://handbook.gitlab.com/handbook/security/product-security/vulnerability-management/incident-response-guidance/",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0",
+    "checked_date": "2026-09-16",
+    "sections": ["Definition", "Identification", "Reporting Incidents", "Coordination"]
+  },
+  {
+    "id": "gitlab-ai-in-support",
+    "title": "Using AI in Support",
+    "url": "https://handbook.gitlab.com/handbook/support/ai/using-ai-in-support/",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0",
+    "checked_date": "2026-09-16",
+    "sections": ["Data classification: quick rules", "Prompt engineering for Support Engineers"]
+  },
+  {
+    "id": "gitlab-okta-app-setup",
+    "title": "Okta Application Setup Guide",
+    "url": "https://handbook.gitlab.com/handbook/security/corporate/systems/okta/app/setup/",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0",
+    "checked_date": "2026-09-16",
+    "sections": ["Overview", "Timeline Expectations"]
+  }
+]
