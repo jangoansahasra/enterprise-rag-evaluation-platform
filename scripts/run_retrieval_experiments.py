@@ -10,6 +10,10 @@ from rag_reliability.data import load_benchmark, load_corpus
 from rag_reliability.dense import DEFAULT_EMBEDDING_MODEL, DenseRetriever
 from rag_reliability.evaluation import evaluate_retriever
 from rag_reliability.hybrid import HybridRetriever
+from rag_reliability.reranking import (
+    DEFAULT_RERANKER_MODEL,
+    CrossEncoderReranker,
+)
 from rag_reliability.retrieval import BM25Retriever
 
 
@@ -52,10 +56,22 @@ def main() -> None:
         rrf_k=60,
     )
 
+    build_start = perf_counter()
+    reranked = CrossEncoderReranker(
+        hybrid,
+        candidate_k=10,
+    )
+    reranker_build_ms = (perf_counter() - build_start) * 1000
+
     reports = {
         "bm25": timed_evaluation("bm25", bm25, benchmark),
         "dense": timed_evaluation("dense", dense, benchmark),
         "hybrid_rrf": timed_evaluation("hybrid_rrf", hybrid, benchmark),
+        "hybrid_reranked": timed_evaluation(
+            "hybrid_reranked",
+            reranked,
+            benchmark,
+        ),
     }
 
     reports["bm25"]["configuration"]["index_build_ms"] = round(
@@ -75,6 +91,13 @@ def main() -> None:
             "candidate_k": 10,
             "rrf_k": 60,
             "embedding_model": DEFAULT_EMBEDDING_MODEL,
+        }
+    )
+    reports["hybrid_reranked"]["configuration"].update(
+        {
+            "candidate_k": 10,
+            "reranker_model": DEFAULT_RERANKER_MODEL,
+            "model_build_ms": round(reranker_build_ms, 3),
         }
     )
 
