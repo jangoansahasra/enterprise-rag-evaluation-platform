@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "dataset": {
+    "minimum_sources": 10,
+    "minimum_corpus_passages": 19,
+    "minimum_benchmark_questions": 20
+  },
+  "retrieval": {
+    "minimum_recall_at_3": 0.8,
+    "minimum_mean_reciprocal_rank": 0.65
+  }
+}
