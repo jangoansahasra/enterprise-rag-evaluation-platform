@@ -7,7 +7,11 @@ name = "enterprise-rag-evaluation-platform"
 version = "0.1.0"
 description = "Evidence-grounded reliability evaluation for enterprise RAG systems"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "faiss-cpu==1.15.0",
+    "numpy>=2.0,<3",
+    "sentence-transformers==6.0.1",
+]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "ruff>=0.6"]
