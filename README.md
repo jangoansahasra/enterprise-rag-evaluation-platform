@@ -18,6 +18,8 @@ PYTHONPATH=src python3 -m rag_reliability.cli
 
 The command writes `artifacts/runs/bm25-baseline.json` with Recall@3, mean reciprocal rank, and per-question rankings. Frozen comparison results are stored in `artifacts/baselines/`; `bm25-v0.2.json` evaluates the expanded starter benchmark. See [the architecture](docs/architecture.md) and [delivery plan](docs/project-plan.md) for how this grows into the full reliability platform.
 
+Current retrieval findings and limitations are documented in [the retrieval experiment report](docs/retrieval-results.md).
+
 ## Data rules
 
 - Keep the handbook's organization and policy context explicit. Do not present GitLab policy as general advice for other employers.
