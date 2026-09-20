@@ -34,3 +34,7 @@ Current retrieval findings and limitations are documented in [the retrieval expe
 1. Expand and freeze the source corpus with version identifiers and local licensed snapshots.
 2. Review the benchmark manually, including ambiguous and multi-document cases.
 3. Implement document ingestion and BM25 retrieval as the first measured baseline.
+
+## Controlled decision workflow
+
+The bounded answer, refusal, and escalation flow is documented in the [controlled workflow report](docs/controlled-workflow.md).
