@@ -8,3 +8,9 @@ dist/
 .env
 artifacts/runs/*.json
 !artifacts/runs/.gitkeep
+
+# Local MLflow experiment store
+artifacts/mlruns/
+mlruns/
+artifacts/mlflow/
+artifacts/observability/

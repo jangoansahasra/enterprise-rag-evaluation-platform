@@ -56,3 +56,18 @@ python -m pytest -q
 git diff --check
 git status
 ```
+
+## Experiment tracking and observability
+
+Retrieval experiments create separate MLflow runs for BM25, dense, hybrid, and reranked configurations. Each run records configuration parameters, retrieval metrics, latency, tags, and the complete evaluation report.
+
+Structured JSON logs and OpenTelemetry spans capture request IDs, configuration details, evaluation results, latency, failures, and trace context.
+
+```bash
+PYTHONPATH=src python scripts/run_retrieval_experiments.py
+
+python -m mlflow ui \
+  --backend-store-uri sqlite:///artifacts/mlflow/mlflow.db \
+  --default-artifact-root ./artifacts/mlflow/artifacts \
+  --port 5000
+  ```
