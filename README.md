@@ -38,3 +38,21 @@ Current retrieval findings and limitations are documented in [the retrieval expe
 ## Controlled decision workflow
 
 The bounded answer, refusal, and escalation flow is documented in the [controlled workflow report](docs/controlled-workflow.md).
+
+## Reliability dashboard
+
+The Streamlit dashboard reads versioned evaluation artifacts, so it works without hosted-model credentials.
+
+```bash
+python -m streamlit run dashboard/app.py
+```
+It presents retrieval quality, latency tradeoffs, workflow decisions, failed cases, CI thresholds, and the current production-readiness assessment.
+
+Stop Streamlit with `Ctrl + C`, then verify:
+
+```bash
+python -m py_compile dashboard/app.py
+python -m pytest -q
+git diff --check
+git status
+```
