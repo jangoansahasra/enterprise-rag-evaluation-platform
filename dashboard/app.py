@@ -24,6 +24,12 @@ WORKFLOW_RESULTS = (
     / "baselines"
     / "workflow-decisions-v0.1.json"
 )
+ANSWER_QUALITY_RESULTS = (
+    ROOT
+    / "artifacts"
+    / "baselines"
+    / "answer-quality-v0.1.json"
+)
 QUALITY_GATES = ROOT / "config" / "quality-gates.json"
 SOURCES = ROOT / "data" / "sources.json"
 BENCHMARK = ROOT / "data" / "benchmark.json"
@@ -103,6 +109,7 @@ st.caption(
 
 retrieval_results = load_json(RETRIEVAL_RESULTS)
 workflow_results = load_json(WORKFLOW_RESULTS)
+answer_quality_results = load_json(ANSWER_QUALITY_RESULTS)
 quality_gates = load_json(QUALITY_GATES)
 sources = load_json(SOURCES)
 benchmark = load_json(BENCHMARK)
@@ -113,11 +120,19 @@ failure_df = retrieval_failures(retrieval_results)
 best_recall = retrieval_df["recall_at_3"].max()
 best_mrr = retrieval_df["mrr"].max()
 workflow_accuracy = workflow_results["summary"]["decision_accuracy"]
+answer_quality_summary = answer_quality_results["summary"]
 
-overview_tab, retrieval_tab, workflow_tab, readiness_tab = st.tabs(
+(
+    overview_tab,
+    retrieval_tab,
+    answer_quality_tab,
+    workflow_tab,
+    readiness_tab,
+) = st.tabs(
     [
         "Overview",
         "Retrieval experiments",
+        "Answer quality",
         "Workflow decisions",
         "Production readiness",
     ]
@@ -251,6 +266,138 @@ with retrieval_tab:
         "Latency values come from one local run over a small corpus and are "
         "directional rather than production benchmarks."
     )
+with answer_quality_tab:
+    st.subheader("Grounding and answer-quality evaluation")
+
+    primary_metrics = st.columns(4)
+    primary_metrics[0].metric(
+        "Answer correctness",
+        f"{answer_quality_summary['answer_correctness']:.1%}",
+    )
+    primary_metrics[1].metric(
+        "Faithfulness",
+        f"{answer_quality_summary['faithfulness']:.1%}",
+    )
+    primary_metrics[2].metric(
+        "Citation precision",
+        f"{answer_quality_summary['citation_precision']:.1%}",
+    )
+    primary_metrics[3].metric(
+        "Citation recall",
+        f"{answer_quality_summary['citation_recall']:.1%}",
+    )
+
+    secondary_metrics = st.columns(4)
+    secondary_metrics[0].metric(
+        "Hallucination rate",
+        f"{answer_quality_summary['hallucination_rate']:.1%}",
+    )
+    secondary_metrics[1].metric(
+        "Decision accuracy",
+        f"{answer_quality_summary['decision_accuracy']:.1%}",
+    )
+    secondary_metrics[2].metric(
+        "Refusal accuracy",
+        f"{answer_quality_summary['refusal_accuracy']:.1%}",
+    )
+    secondary_metrics[3].metric(
+        "Escalation accuracy",
+        f"{answer_quality_summary['escalation_accuracy']:.1%}",
+    )
+
+    chart_metrics = pd.DataFrame(
+        [
+            {
+                "metric": "Answer correctness",
+                "score": answer_quality_summary[
+                    "answer_correctness"
+                ],
+            },
+            {
+                "metric": "Faithfulness",
+                "score": answer_quality_summary["faithfulness"],
+            },
+            {
+                "metric": "Citation precision",
+                "score": answer_quality_summary[
+                    "citation_precision"
+                ],
+            },
+            {
+                "metric": "Citation recall",
+                "score": answer_quality_summary["citation_recall"],
+            },
+            {
+                "metric": "Decision accuracy",
+                "score": answer_quality_summary[
+                    "decision_accuracy"
+                ],
+            },
+        ]
+    )
+
+    answer_chart = px.bar(
+        chart_metrics,
+        x="metric",
+        y="score",
+        range_y=[0, 1],
+        color="score",
+        color_continuous_scale="RdYlGn",
+        labels={
+            "metric": "Metric",
+            "score": "Score",
+        },
+    )
+    answer_chart.update_layout(
+        coloraxis_showscale=False,
+        showlegend=False,
+    )
+    st.plotly_chart(answer_chart, width="stretch")
+
+    st.caption(
+        "Answer correctness uses normalized lexical token F1. "
+        "Faithfulness measures answer-term coverage by retrieved evidence. "
+        "These are deterministic proxy metrics rather than LLM judge scores."
+    )
+
+    answer_cases = pd.DataFrame(answer_quality_results["cases"])
+    citation_issues = answer_cases[
+        (
+            answer_cases["citation_precision"].fillna(1.0)
+            < 1.0
+        )
+        | (
+            answer_cases["citation_recall"].fillna(1.0)
+            < 1.0
+        )
+        | (~answer_cases["decision_correct"])
+    ]
+
+    st.subheader("Cases requiring review")
+
+    if citation_issues.empty:
+        st.success("No answer-quality issues were recorded.")
+    else:
+        st.dataframe(
+            citation_issues[
+                [
+                    "question_id",
+                    "question",
+                    "answer",
+                    "citation_precision",
+                    "citation_recall",
+                    "citations",
+                    "expected_citations",
+                ]
+            ],
+            width="stretch",
+            hide_index=True,
+        )
+
+        st.warning(
+            "The baseline identifies a wrong citation for q015 and "
+            "incomplete multi-document citation coverage for q019."
+        )
 
 with workflow_tab:
     st.subheader("Answer, refusal, and escalation behavior")
@@ -389,7 +536,7 @@ with readiness_tab:
 
     st.error(
         "Production status: NOT READY. Expand the benchmark, add held-out "
-        "evaluation data, measure generation faithfulness, and validate "
+        "evaluation data, add semantic judge-based evaluation, and validate "
         "latency under realistic load before release."
     )
 

@@ -71,3 +71,12 @@ python -m mlflow ui \
   --default-artifact-root ./artifacts/mlflow/artifacts \
   --port 5000
   ```
+
+  ## Answer-quality evaluation
+
+The platform evaluates answer correctness, evidence faithfulness, hallucination rate, citation precision and recall, refusal correctness, and escalation correctness. The first credential-free baseline achieved 100% decision accuracy and deterministic faithfulness, while identifying two citation weaknesses and an answer-conciseness gap.
+
+```bash
+PYTHONPATH=src python scripts/evaluate_answer_quality.py
+```
+See [answer-quality evaluation](docs/answer-quality-evaluation.md) for metric definitions, results, and limitations.
