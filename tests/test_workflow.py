@@ -106,3 +106,50 @@ def test_term_normalization_handles_common_word_forms() -> None:
     assert "coordinat" in meaningful_terms("coordinates coordination")
     assert "incident" in meaningful_terms("incident incidents")
     assert "credential" in meaningful_terms("credential credentials")
+
+def test_conditional_question_can_combine_multiple_sources() -> None:
+    retriever = StubRetriever(
+        [
+            result(
+                "ai-policy",
+                "AI data rules",
+                (
+                    "Customer credentials are RED data and may only "
+                    "be used in approved internal AI tools."
+                ),
+            ),
+            result(
+                "credential-policy",
+                "Credentials and access tokens",
+                (
+                    "Credentials inherit the classification of the "
+                    "data they protect."
+                ),
+                score=0.8,
+            ),
+            result(
+                "unrelated",
+                "Incident reporting",
+                "Report uncertain incidents through the support form.",
+                score=0.3,
+            ),
+        ]
+    )
+    workflow = build_workflow(retriever)
+
+    output = workflow.invoke(
+        {
+            "question": (
+                "Can I use customer credentials in an AI tool "
+                "if names are anonymized?"
+            )
+        }
+    )
+
+    assert output["decision"] == "answer"
+    assert output["citations"] == [
+        "ai-policy",
+        "credential-policy",
+    ]
+    assert "RED data" in output["answer"]
+    assert "inherit the classification" in output["answer"]
