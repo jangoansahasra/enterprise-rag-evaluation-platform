@@ -232,14 +232,43 @@ def build_workflow(
         return state["evidence_quality"]
 
     def answer_with_evidence(state: WorkflowState) -> WorkflowState:
-        evidence = state["retrieved_evidence"][0]
-        citation = evidence["chunk_id"]
+        retrieved = state["retrieved_evidence"]
+        selected = [retrieved[0]]
+
+        conditional_terms = {
+            "if",
+            "when",
+            "unless",
+            "except",
+        }
+        question_tokens = set(tokenize(state["question"]))
+        question_terms = meaningful_terms(state["question"])
+
+        if question_tokens & conditional_terms:
+            for candidate in retrieved[1:]:
+                candidate_terms = meaningful_terms(
+                    f"{candidate['section']} {candidate['text']}"
+                )
+                shared_terms = question_terms & candidate_terms
+
+                if shared_terms:
+                    selected.append(candidate)
+                    break
+
+        answer = " ".join(
+            evidence["text"] for evidence in selected
+        )
+        citations = [
+            evidence["chunk_id"] for evidence in selected
+        ]
 
         return {
             "decision": "answer",
-            "answer": evidence["text"],
-            "citations": [citation],
-            "reason": "Evidence passed the deterministic support threshold.",
+            "answer": answer,
+            "citations": citations,
+            "reason": (
+                "Evidence passed the deterministic support threshold."
+            ),
         }
 
     def refuse_out_of_domain(state: WorkflowState) -> WorkflowState:

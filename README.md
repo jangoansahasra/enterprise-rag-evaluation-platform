@@ -80,3 +80,5 @@ The platform evaluates answer correctness, evidence faithfulness, hallucination 
 PYTHONPATH=src python scripts/evaluate_answer_quality.py
 ```
 See [answer-quality evaluation](docs/answer-quality-evaluation.md) for metric definitions, results, and limitations.
+
+A regression-driven evidence-selection improvement uses heading-aware lexical coverage with a cross-encoder score guard and bounded multi-document aggregation. It increased citation precision from 93.75% to 100% and citation recall from 90.62% to 100% without reducing decision accuracy or faithfulness. See [evidence-selection improvement](docs/evidence-selection.md).

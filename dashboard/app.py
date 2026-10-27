@@ -28,7 +28,7 @@ ANSWER_QUALITY_RESULTS = (
     ROOT
     / "artifacts"
     / "baselines"
-    / "answer-quality-v0.1.json"
+    / "answer-quality-v0.2.json"
 )
 QUALITY_GATES = ROOT / "config" / "quality-gates.json"
 SOURCES = ROOT / "data" / "sources.json"

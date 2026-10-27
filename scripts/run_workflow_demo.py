@@ -12,6 +12,9 @@ from rag_reliability.hybrid import HybridRetriever
 from rag_reliability.reranking import CrossEncoderReranker
 from rag_reliability.retrieval import BM25Retriever
 from rag_reliability.workflow import build_workflow
+from rag_reliability.evidence_selection import (
+    HeadingAwareEvidenceSelector,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,9 +36,13 @@ def build_retriever():
         dense,
         candidate_k=10,
     )
-    return CrossEncoderReranker(
+    reranker = CrossEncoderReranker(
         hybrid,
         candidate_k=10,
+    )
+    return HeadingAwareEvidenceSelector(
+        reranker,
+        candidate_k=5,
     )
 
 
