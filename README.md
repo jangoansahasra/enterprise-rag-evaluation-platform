@@ -4,7 +4,7 @@ A source-grounded evaluation platform for an enterprise IT support assistant. Th
 
 ## Current stage
 
-Milestone 1 is underway: source selection, provenance, and benchmark design. The audited starter release contains 10 public handbook sources and 20 benchmark questions across direct, reasoning, ambiguous, multi-document, adversarial, unanswerable, and out-of-domain cases. No GitHub repository has been created.
+The platform now includes a verified 20-question benchmark, four retrieval configurations, cross-encoder reranking, a controlled LangGraph workflow, deterministic answer-quality evaluation, RAGAS and DeepEval integrations, MLflow tracking, OpenTelemetry observability, CI quality gates, and a saved-results Streamlit dashboard.
 
 Run `python3 scripts/validate_data.py` to check the starter data. The source manifest records provenance, `corpus.json` contains the independently loaded searchable passages, and `benchmark.json` contains gold labels. Keeping the corpus separate from the benchmark prevents evaluation labels from being used to construct the retriever.
 
@@ -29,11 +29,12 @@ Current retrieval findings and limitations are documented in [the retrieval expe
 - Recheck source pages before a released benchmark version; public handbook content can change.
 - Credit GitLab and comply with its [handbook reuse terms](https://handbook.gitlab.com/handbook/about/handbook-usage/).
 
-## Next build steps
 
-1. Expand and freeze the source corpus with version identifiers and local licensed snapshots.
-2. Review the benchmark manually, including ambiguous and multi-document cases.
-3. Implement document ingestion and BM25 retrieval as the first measured baseline.
+## Remaining build steps
+
+1. Add hosted and local model comparison with token usage, latency, cost, and structured-output reliability.
+2. Expand the benchmark with held-out public-source questions and additional human review.
+3. Add Docker deployment, system cards, architecture diagrams, and a recorded demonstration.
 
 ## Controlled decision workflow
 
@@ -70,9 +71,9 @@ python -m mlflow ui \
   --backend-store-uri sqlite:///artifacts/mlflow/mlflow.db \
   --default-artifact-root ./artifacts/mlflow/artifacts \
   --port 5000
-  ```
+```
 
-  ## Answer-quality evaluation
+## Answer-quality evaluation
 
 The platform evaluates answer correctness, evidence faithfulness, hallucination rate, citation precision and recall, refusal correctness, and escalation correctness. The first credential-free baseline achieved 100% decision accuracy and deterministic faithfulness, while identifying two citation weaknesses and an answer-conciseness gap.
 
@@ -82,3 +83,23 @@ PYTHONPATH=src python scripts/evaluate_answer_quality.py
 See [answer-quality evaluation](docs/answer-quality-evaluation.md) for metric definitions, results, and limitations.
 
 A regression-driven evidence-selection improvement uses heading-aware lexical coverage with a cross-encoder score guard and bounded multi-document aggregation. It increased citation precision from 93.75% to 100% and citation recall from 90.62% to 100% without reducing decision accuracy or faithfulness. See [evidence-selection improvement](docs/evidence-selection.md).
+
+
+## RAGAS and DeepEval evaluation
+
+The project exports a shared set of 16 verified, answerable cases to RAGAS and DeepEval without requiring hosted-model credentials.
+
+RAGAS ID-based evaluation achieved 100% context recall and 35.42% raw context precision. The result shows that verified evidence is consistently retrieved while additional candidates remain available for the evidence-selection stage.
+
+DeepEval custom deterministic metrics achieved 100% faithfulness, a 56.59% mean lexical answer-correctness score, and a 75% correctness pass rate. The lexical score is treated as a conservative proxy because valid paraphrases can differ from the verified answer wording.
+
+```bash
+PYTHONPATH=src python scripts/export_judge_cases.py \
+  --validate-adapters
+
+RAGAS_DO_NOT_TRACK=true \
+PYTHONPATH=src \
+python scripts/run_ragas_id_evaluation.py
+
+PYTHONPATH=src python scripts/run_deepeval_deterministic.py
+```

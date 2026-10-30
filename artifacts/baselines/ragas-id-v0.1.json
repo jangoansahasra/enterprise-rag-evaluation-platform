@@ -1,0 +1,240 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-10-29T17:11:24.653833+00:00",
+  "framework": "ragas",
+  "framework_version": "0.4.3",
+  "requires_judge_model": false,
+  "metric_method": "Exact retrieved and reference context ID comparison",
+  "summary": {
+    "evaluated_questions": 16,
+    "mean_id_context_precision": 0.35416666666666663,
+    "mean_id_context_recall": 1.0
+  },
+  "cases": [
+    {
+      "question_id": "q001",
+      "question": "Which password manager does GitLab use?",
+      "retrieved_context_ids": [
+        "gitlab-password-guidelines::Passwords at GitLab",
+        "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+        "gitlab-password-guidelines::1Password"
+      ],
+      "reference_context_ids": [
+        "gitlab-password-guidelines::Passwords at GitLab"
+      ],
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "question_id": "q002",
+      "question": "I forgot my 1Password Master Password. Where should I ask for help?",
+      "retrieved_context_ids": [
+        "gitlab-password-guidelines::1Password",
+        "gitlab-password-guidelines::Passwords at GitLab",
+        "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+      ],
+      "reference_context_ids": [
+        "gitlab-password-guidelines::1Password"
+      ],
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "question_id": "q003",
+      "question": "What should a GitLab team member do immediately after losing a laptop with company credentials?",
+      "retrieved_context_ids": [
+        "gitlab-acceptable-use::Lost or Stolen Procedures",
+        "gitlab-ai-in-support::Data classification: quick rules",
+        "gitlab-personal-vpn::What is a personal VPN?"
+      ],
+      "reference_context_ids": [
+        "gitlab-acceptable-use::Lost or Stolen Procedures"
+      ],
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "question_id": "q004",
+      "question": "Does GitLab use a corporate VPN for remote access?",
+      "retrieved_context_ids": [
+        "gitlab-personal-vpn::What is a personal VPN?",
+        "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+        "gitlab-password-guidelines::Passwords at GitLab"
+      ],
+      "reference_context_ids": [
+        "gitlab-personal-vpn::What is a personal VPN?"
+      ],
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "question_id": "q005",
+      "question": "Can I use a USB drive on a company-managed device without approval?",
+      "retrieved_context_ids": [
+        "gitlab-acceptable-use::Use of External Media on Company Assets",
+        "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?",
+        "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive"
+      ],
+      "reference_context_ids": [
+        "gitlab-acceptable-use::Use of External Media on Company Assets"
+      ],
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "question_id": "q009",
+      "question": "Do most GitLab access requests need manager approval?",
+      "retrieved_context_ids": [
+        "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?",
+        "gitlab-password-guidelines::Passwords at GitLab",
+        "gitlab-data-classification::RED"
+      ],
+      "reference_context_ids": [
+        "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+      ],
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "question_id": "q011",
+      "question": "How can I check whether my Mac is already enrolled in Jamf?",
+      "retrieved_context_ids": [
+        "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment",
+        "gitlab-jamf-setup::Prerequisites",
+        "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)"
+      ],
+      "reference_context_ids": [
+        "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+      ],
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "question_id": "q012",
+      "question": "Can I enroll my laptop in Jamf over hotel Wi-Fi?",
+      "retrieved_context_ids": [
+        "gitlab-jamf-setup::Prerequisites",
+        "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment",
+        "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+      ],
+      "reference_context_ids": [
+        "gitlab-jamf-setup::Prerequisites"
+      ],
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "question_id": "q013",
+      "question": "What is GitLab's most sensitive data classification?",
+      "retrieved_context_ids": [
+        "gitlab-data-classification::RED",
+        "gitlab-ai-in-support::Data classification: quick rules",
+        "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive"
+      ],
+      "reference_context_ids": [
+        "gitlab-data-classification::RED"
+      ],
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "question_id": "q014",
+      "question": "How should a system containing both Yellow and Orange data be classified?",
+      "retrieved_context_ids": [
+        "gitlab-data-classification::Combinations of data types may result in a higher system classification level",
+        "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect",
+        "gitlab-ai-in-support::Data classification: quick rules"
+      ],
+      "reference_context_ids": [
+        "gitlab-data-classification::Combinations of data types may result in a higher system classification level"
+      ],
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "question_id": "q015",
+      "question": "A suspicious email arrived in Gmail. How should I report it?",
+      "retrieved_context_ids": [
+        "gitlab-phishing-program::Submission of phishing email via PhishArm",
+        "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+        "gitlab-acceptable-use::Lost or Stolen Procedures"
+      ],
+      "reference_context_ids": [
+        "gitlab-phishing-program::Submission of phishing email via PhishArm"
+      ],
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "question_id": "q016",
+      "question": "What should I do with a suspicious work-related social media message?",
+      "retrieved_context_ids": [
+        "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+        "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+        "gitlab-incident-response-guidance::Coordination"
+      ],
+      "reference_context_ids": [
+        "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+      ],
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "question_id": "q017",
+      "question": "Who initially coordinates an infrastructure incident at GitLab?",
+      "retrieved_context_ids": [
+        "gitlab-incident-response-guidance::Coordination",
+        "gitlab-password-guidelines::Passwords at GitLab",
+        "gitlab-personal-vpn::What is a personal VPN?"
+      ],
+      "reference_context_ids": [
+        "gitlab-incident-response-guidance::Coordination"
+      ],
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "question_id": "q018",
+      "question": "I cannot tell whether an incident belongs to Security or Infrastructure. Where should I report it?",
+      "retrieved_context_ids": [
+        "gitlab-incident-response-guidance::Identification",
+        "gitlab-incident-response-guidance::Coordination",
+        "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+      ],
+      "reference_context_ids": [
+        "gitlab-incident-response-guidance::Identification"
+      ],
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "question_id": "q019",
+      "question": "May I paste customer credentials into any approved AI support tool if I anonymize the customer name?",
+      "retrieved_context_ids": [
+        "gitlab-ai-in-support::Data classification: quick rules",
+        "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect",
+        "gitlab-incident-response-guidance::Identification"
+      ],
+      "reference_context_ids": [
+        "gitlab-ai-in-support::Data classification: quick rules",
+        "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+      ],
+      "id_context_precision": 0.6666666666666666,
+      "id_context_recall": 1.0
+    },
+    {
+      "question_id": "q020",
+      "question": "How long is the current SLA for setting up a new Okta application after the change-management issue is created?",
+      "retrieved_context_ids": [
+        "gitlab-okta-app-setup::Timeline Expectations",
+        "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment",
+        "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+      ],
+      "reference_context_ids": [
+        "gitlab-okta-app-setup::Timeline Expectations"
+      ],
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    }
+  ]
+}

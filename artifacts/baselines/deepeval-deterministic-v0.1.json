@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-10-29T17:14:58.984967+00:00",
+  "framework": "DeepEval",
+  "evaluation_type": "credential_free_deterministic",
+  "requires_judge_model": false,
+  "source_cases": "artifacts/runs/judge-cases.json",
+  "metrics": {
+    "answer_correctness": {
+      "implementation": "normalized lexical token F1",
+      "threshold": 0.5
+    },
+    "faithfulness": {
+      "implementation": "answer-term evidence coverage",
+      "threshold": 0.8
+    }
+  },
+  "summary": {
+    "evaluated_questions": 16,
+    "mean_answer_correctness": 0.5659066292433432,
+    "answer_correctness_pass_rate": 0.75,
+    "mean_faithfulness": 1.0,
+    "faithfulness_pass_rate": 1.0
+  },
+  "cases": [
+    {
+      "question_id": "q001",
+      "question": "Which password manager does GitLab use?",
+      "answer_correctness": 0.8000000000000002,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": true,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    },
+    {
+      "question_id": "q002",
+      "question": "I forgot my 1Password Master Password. Where should I ask for help?",
+      "answer_correctness": 0.6153846153846153,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": true,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    },
+    {
+      "question_id": "q003",
+      "question": "What should a GitLab team member do immediately after losing a laptop with company credentials?",
+      "answer_correctness": 0.4444444444444445,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": false,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    },
+    {
+      "question_id": "q004",
+      "question": "Does GitLab use a corporate VPN for remote access?",
+      "answer_correctness": 0.5555555555555556,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": true,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    },
+    {
+      "question_id": "q005",
+      "question": "Can I use a USB drive on a company-managed device without approval?",
+      "answer_correctness": 0.3333333333333333,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": false,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    },
+    {
+      "question_id": "q009",
+      "question": "Do most GitLab access requests need manager approval?",
+      "answer_correctness": 0.8,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": true,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    },
+    {
+      "question_id": "q011",
+      "question": "How can I check whether my Mac is already enrolled in Jamf?",
+      "answer_correctness": 0.5,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": true,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    },
+    {
+      "question_id": "q012",
+      "question": "Can I enroll my laptop in Jamf over hotel Wi-Fi?",
+      "answer_correctness": 0.5925925925925927,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": true,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    },
+    {
+      "question_id": "q013",
+      "question": "What is GitLab's most sensitive data classification?",
+      "answer_correctness": 0.5333333333333333,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": true,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    },
+    {
+      "question_id": "q014",
+      "question": "How should a system containing both Yellow and Orange data be classified?",
+      "answer_correctness": 0.6666666666666666,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": true,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    },
+    {
+      "question_id": "q015",
+      "question": "A suspicious email arrived in Gmail. How should I report it?",
+      "answer_correctness": 0.23529411764705882,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": false,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    },
+    {
+      "question_id": "q016",
+      "question": "What should I do with a suspicious work-related social media message?",
+      "answer_correctness": 0.5,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": true,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    },
+    {
+      "question_id": "q017",
+      "question": "Who initially coordinates an infrastructure incident at GitLab?",
+      "answer_correctness": 0.7586206896551725,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": true,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    },
+    {
+      "question_id": "q018",
+      "question": "I cannot tell whether an incident belongs to Security or Infrastructure. Where should I report it?",
+      "answer_correctness": 0.6153846153846153,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": true,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    },
+    {
+      "question_id": "q019",
+      "question": "May I paste customer credentials into any approved AI support tool if I anonymize the customer name?",
+      "answer_correctness": 0.2857142857142857,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": false,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    },
+    {
+      "question_id": "q020",
+      "question": "How long is the current SLA for setting up a new Okta application after the change-management issue is created?",
+      "answer_correctness": 0.8181818181818182,
+      "answer_correctness_threshold": 0.5,
+      "answer_correctness_passed": true,
+      "faithfulness": 1.0,
+      "faithfulness_threshold": 0.8,
+      "faithfulness_passed": true
+    }
+  ]
+}
