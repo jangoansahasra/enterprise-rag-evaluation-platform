@@ -4,7 +4,7 @@ A source-grounded evaluation platform for an enterprise IT support assistant. Th
 
 ## Current stage
 
-The platform now includes a verified 20-question benchmark, four retrieval configurations, cross-encoder reranking, a controlled LangGraph workflow, deterministic answer-quality evaluation, RAGAS and DeepEval integrations, MLflow tracking, OpenTelemetry observability, CI quality gates, and a saved-results Streamlit dashboard.
+The platform now includes a verified 20-question benchmark, four retrieval configurations, cross-encoder reranking, a controlled LangGraph workflow, deterministic answer-quality evaluation, RAGAS and DeepEval integrations, local open-source model comparison, MLflow tracking, OpenTelemetry observability, CI quality gates, and a saved-results Streamlit dashboard.
 
 Run `python3 scripts/validate_data.py` to check the starter data. The source manifest records provenance, `corpus.json` contains the independently loaded searchable passages, and `benchmark.json` contains gold labels. Keeping the corpus separate from the benchmark prevents evaluation labels from being used to construct the retriever.
 
@@ -32,7 +32,7 @@ Current retrieval findings and limitations are documented in [the retrieval expe
 
 ## Remaining build steps
 
-1. Add hosted and local model comparison with token usage, latency, cost, and structured-output reliability.
+1. Add optional hosted-model comparison with token usage, latency, cost, and structured-output reliability.
 2. Expand the benchmark with held-out public-source questions and additional human review.
 3. Add Docker deployment, system cards, architecture diagrams, and a recorded demonstration.
 
@@ -103,3 +103,15 @@ python scripts/run_ragas_id_evaluation.py
 
 PYTHONPATH=src python scripts/run_deepeval_deterministic.py
 ```
+## Local model comparison
+
+The platform compares Llama 3.2 3B, Mistral 7B, and Phi-4 Mini over the same 16 verified enterprise RAG cases using local Ollama inference.
+
+All three models achieved 100% structured-output reliability under constrained JSON decoding. Mistral 7B produced the strongest overall quality with 56.18% lexical answer correctness, 76.53% deterministic faithfulness, 93.75% citation precision, and 100% citation recall. Llama 3.2 was fastest at 3.96 seconds per case, while Mistral averaged 7.23 seconds.
+
+```bash
+caffeinate -i env PYTHONPATH=src \
+  python scripts/run_model_comparison.py
+```
+The experiment records answer quality, evidence support, citation correctness, structured-output reliability, latency, token usage, cost, and failures. Local inference has zero API cost, while compute and operational costs remain outside the current estimate.
+See [local model comparison](docs/model-comparison.md) for results, failure analysis, reproducibility notes, and metric limitations.
