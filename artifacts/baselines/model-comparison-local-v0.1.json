@@ -1,0 +1,1199 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-11-03T17:24:07.986107+00:00",
+  "complete": true,
+  "source_cases": "artifacts/runs/judge-cases.json",
+  "measurement_notes": [
+    "Models run locally through Ollama.",
+    "Estimated API cost is zero for local inference.",
+    "Latency excludes the unrecorded warm-up request.",
+    "Quality metrics are deterministic proxies."
+  ],
+  "models": [
+    {
+      "provider": "ollama",
+      "model": "llama3.2:3b-instruct-q4_K_M",
+      "deployment": "local",
+      "cases": [
+        {
+          "question_id": "q001",
+          "question": "Which password manager does GitLab use?",
+          "expected_output": "GitLab uses 1Password for password management.",
+          "expected_citations": [
+            "gitlab-password-guidelines::Passwords at GitLab"
+          ],
+          "answer": "1Password",
+          "citations": [
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+            "gitlab-password-guidelines::1Password"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.33333333333333337,
+          "faithfulness": 1.0,
+          "citation_precision": 0.3333333333333333,
+          "citation_recall": 1.0,
+          "latency_ms": 4012.6358330016956,
+          "input_tokens": 243,
+          "output_tokens": 54,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"1Password\", \"citations\": [\"gitlab-password-guidelines::Passwords at GitLab\", \"gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive\", \"gitlab-password-guidelines::1Password\"]}"
+        },
+        {
+          "question_id": "q002",
+          "question": "I forgot my 1Password Master Password. Where should I ask for help?",
+          "expected_output": "Contact IT through the Compass app in Slack or by emailing it-help@gitlab.com.",
+          "expected_citations": [
+            "gitlab-password-guidelines::1Password"
+          ],
+          "answer": "Compass app in slack or email it-help@gitlab.com",
+          "citations": [
+            "gitlab-password-guidelines::1Password",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.8421052631578948,
+          "faithfulness": 1.0,
+          "citation_precision": 0.5,
+          "citation_recall": 1.0,
+          "latency_ms": 4674.017792043742,
+          "input_tokens": 266,
+          "output_tokens": 51,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"Compass app in slack or email it-help@gitlab.com\", \"citations\": [\"gitlab-password-guidelines::1Password\", \"gitlab-phishing-program::What to do if you suspect something else is suspicious\"]}"
+        },
+        {
+          "question_id": "q003",
+          "question": "What should a GitLab team member do immediately after losing a laptop with company credentials?",
+          "expected_output": "Email panic@gitlab.com immediately to trigger the lost-device security response.",
+          "expected_citations": [
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "answer": "send an email to panic@gitlab.com right away",
+          "citations": [
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.47058823529411764,
+          "faithfulness": 1.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 3402.7277500135824,
+          "input_tokens": 260,
+          "output_tokens": 34,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"send an email to panic@gitlab.com right away\", \"citations\": [\"gitlab-acceptable-use::Lost or Stolen Procedures\"]}"
+        },
+        {
+          "question_id": "q004",
+          "question": "Does GitLab use a corporate VPN for remote access?",
+          "expected_output": "No. GitLab's handbook states that it does not use a corporate VPN.",
+          "expected_citations": [
+            "gitlab-personal-vpn::What is a personal VPN?"
+          ],
+          "answer": "No",
+          "citations": [
+            "gitlab-personal-vpn::What is a personal VPN?"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.19999999999999998,
+          "faithfulness": 0.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 3115.4919170076028,
+          "input_tokens": 241,
+          "output_tokens": 29,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"No\", \"citations\": [\"gitlab-personal-vpn::What is a personal VPN?\"]}\n\n  "
+        },
+        {
+          "question_id": "q005",
+          "question": "Can I use a USB drive on a company-managed device without approval?",
+          "expected_output": "No. Removable storage is blocked by default; a business need requires an exception request.",
+          "expected_citations": [
+            "gitlab-acceptable-use::Use of External Media on Company Assets"
+          ],
+          "answer": "Yes",
+          "citations": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.0,
+          "faithfulness": 0.0,
+          "citation_precision": 0.0,
+          "citation_recall": 0.0,
+          "latency_ms": 3836.7216660408303,
+          "input_tokens": 273,
+          "output_tokens": 41,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"Yes\", \"citations\": [\"gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?\"]}\n\n  "
+        },
+        {
+          "question_id": "q009",
+          "question": "Do most GitLab access requests need manager approval?",
+          "expected_output": "Yes. Most access requests need manager approval, with documented exceptions.",
+          "expected_citations": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "answer": "Most access requests need Manager approval",
+          "citations": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.8,
+          "faithfulness": 1.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 4587.63420896139,
+          "input_tokens": 228,
+          "output_tokens": 47,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"Most access requests need Manager approval\", \"citations\": [\"gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?\"]}\n\n  \t\t "
+        },
+        {
+          "question_id": "q011",
+          "question": "How can I check whether my Mac is already enrolled in Jamf?",
+          "expected_output": "Open System Settings, then General and Device Management. If the MDM Profile is installed, the laptop is enrolled.",
+          "expected_citations": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "answer": "Select `General` > `Device Management` to check if `MDM Profile` is present",
+          "citations": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.5,
+          "faithfulness": 1.0,
+          "citation_precision": 0.5,
+          "citation_recall": 1.0,
+          "latency_ms": 5371.601500024553,
+          "input_tokens": 267,
+          "output_tokens": 57,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"Select `General` > `Device Management` to check if `MDM Profile` is present\", \"citations\": [\"gitlab-jamf-setup::Step 1: Verify Jamf Enrollment\", \"gitlab-jamf-setup::Prerequisites\"]}"
+        },
+        {
+          "question_id": "q012",
+          "question": "Can I enroll my laptop in Jamf over hotel Wi-Fi?",
+          "expected_output": "No. The prerequisites say to use a stable internet connection and not mobile internet or hotel Wi-Fi.",
+          "expected_citations": [
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "answer": "No",
+          "citations": [
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.14285714285714288,
+          "faithfulness": 0.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 3029.706040979363,
+          "input_tokens": 258,
+          "output_tokens": 25,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"No\", \"citations\": [\"gitlab-jamf-setup::Prerequisites\"]}\n\n  "
+        },
+        {
+          "question_id": "q013",
+          "question": "What is GitLab's most sensitive data classification?",
+          "expected_output": "RED is GitLab's most sensitive data classification.",
+          "expected_citations": [
+            "gitlab-data-classification::RED"
+          ],
+          "answer": "RED",
+          "citations": [
+            "gitlab-data-classification::RED",
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::RED"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.2857142857142857,
+          "faithfulness": 1.0,
+          "citation_precision": 0.5,
+          "citation_recall": 1.0,
+          "latency_ms": 3712.4492920120247,
+          "input_tokens": 258,
+          "output_tokens": 43,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"RED\", \"citations\": [\"gitlab-data-classification::RED\", \"gitlab-ai-in-support::Data classification: quick rules\", \"gitlab-data-classification::RED\"]}"
+        },
+        {
+          "question_id": "q014",
+          "question": "How should a system containing both Yellow and Orange data be classified?",
+          "expected_output": "It should be classified Orange because a system takes the highest classification of the data it stores, transmits, or processes.",
+          "expected_citations": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level"
+          ],
+          "answer": "Red",
+          "citations": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level",
+            "gitlab-ai-in-support::Data classification: quick rules"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.0,
+          "faithfulness": 1.0,
+          "citation_precision": 0.5,
+          "citation_recall": 1.0,
+          "latency_ms": 4432.892540993635,
+          "input_tokens": 293,
+          "output_tokens": 50,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"Red\", \"citations\": [\"gitlab-data-classification::Combinations of data types may result in a higher system classification level\", \"gitlab-ai-in-support::Data classification: quick rules\"]}\n\n  \t\t "
+        },
+        {
+          "question_id": "q015",
+          "question": "A suspicious email arrived in Gmail. How should I report it?",
+          "expected_output": "Use the PhishArm button in Gmail and follow its reporting instructions.",
+          "expected_citations": [
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "answer": "Use the PhishArm icon on the right-hand side toolbar in Gmail.",
+          "citations": [
+            "gitlab-phishing-program::Submission of phishing email via PhishArm",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.35294117647058826,
+          "faithfulness": 1.0,
+          "citation_precision": 0.5,
+          "citation_recall": 1.0,
+          "latency_ms": 4883.772958011832,
+          "input_tokens": 267,
+          "output_tokens": 53,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"Use the PhishArm icon on the right-hand side toolbar in Gmail.\", \"citations\": [\"gitlab-phishing-program::Submission of phishing email via PhishArm\", \"gitlab-acceptable-use::Lost or Stolen Procedures\"]}"
+        },
+        {
+          "question_id": "q016",
+          "question": "What should I do with a suspicious work-related social media message?",
+          "expected_output": "Use the /security Slack command; if uncertain, ask in the #security Slack channel.",
+          "expected_citations": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "answer": "Use the /security Slack command",
+          "citations": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.7272727272727273,
+          "faithfulness": 1.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 3933.4173329989426,
+          "input_tokens": 294,
+          "output_tokens": 42,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"Use the /security Slack command\",\n  \"citations\": [\n    \"gitlab-phishing-program::What to do if you suspect something else is suspicious\"\n  ]\n}"
+        },
+        {
+          "question_id": "q017",
+          "question": "Who initially coordinates an infrastructure incident at GitLab?",
+          "expected_output": "The Reliability Team Engineer on Call, generally an SRE, is first alerted and coordinates the response.",
+          "expected_citations": [
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "answer": "The Reliability Team Engineer on Call",
+          "citations": [
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.625,
+          "faithfulness": 1.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 2988.4355420363136,
+          "input_tokens": 249,
+          "output_tokens": 29,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"The Reliability Team Engineer on Call\", \"citations\": [\"gitlab-incident-response-guidance::Coordination\"]}"
+        },
+        {
+          "question_id": "q018",
+          "question": "I cannot tell whether an incident belongs to Security or Infrastructure. Where should I report it?",
+          "expected_output": "Use the support web form; the report will be forwarded internally to the appropriate team.",
+          "expected_citations": [
+            "gitlab-incident-response-guidance::Identification"
+          ],
+          "answer": "/security",
+          "citations": [
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.0,
+          "faithfulness": 1.0,
+          "citation_precision": 0.5,
+          "citation_recall": 1.0,
+          "latency_ms": 4193.239208951127,
+          "input_tokens": 301,
+          "output_tokens": 43,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"/security\", \"citations\": [\"gitlab-incident-response-guidance::Identification\", \"gitlab-phishing-program::What to do if you suspect something else is suspicious\"]}\n\n  "
+        },
+        {
+          "question_id": "q019",
+          "question": "May I paste customer credentials into any approved AI support tool if I anonymize the customer name?",
+          "expected_output": "No. Credentials are RED data and the support guidance limits RED data to GitLab Duo tools; removing a customer name does not change the credential's classification.",
+          "expected_citations": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "answer": "No",
+          "citations": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.11764705882352941,
+          "faithfulness": 0.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 4371.8447090359405,
+          "input_tokens": 296,
+          "output_tokens": 52,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"No\", \"citations\": [\"gitlab-ai-in-support::Data classification: quick rules\", \"gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect\"]}\n\n  \t\t\t   "
+        },
+        {
+          "question_id": "q020",
+          "question": "How long is the current SLA for setting up a new Okta application after the change-management issue is created?",
+          "expected_output": "The current SLA is up to four weeks after the change-management issue is created.",
+          "expected_citations": [
+            "gitlab-okta-app-setup::Timeline Expectations"
+          ],
+          "answer": "up to 4 weeks",
+          "citations": [
+            "gitlab-okta-app-setup::Timeline Expectations"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.33333333333333337,
+          "faithfulness": 1.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 2756.013291014824,
+          "input_tokens": 267,
+          "output_tokens": 27,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"up to 4 weeks\", \"citations\": [\"gitlab-okta-app-setup::Timeline Expectations\"]}"
+        }
+      ],
+      "summary": {
+        "evaluated_questions": 16,
+        "structured_output_reliability": 1.0,
+        "mean_answer_correctness": 0.35817453476605954,
+        "mean_faithfulness": 0.75,
+        "mean_citation_precision": 0.7083333333333334,
+        "mean_citation_recall": 0.9375,
+        "mean_latency_ms": 3956.4125989454624,
+        "total_input_tokens": 4261,
+        "total_output_tokens": 677,
+        "estimated_cost_usd": 0.0,
+        "failure_count": 0
+      }
+    },
+    {
+      "provider": "ollama",
+      "model": "mistral:7b",
+      "deployment": "local",
+      "cases": [
+        {
+          "question_id": "q001",
+          "question": "Which password manager does GitLab use?",
+          "expected_output": "GitLab uses 1Password for password management.",
+          "expected_citations": [
+            "gitlab-password-guidelines::Passwords at GitLab"
+          ],
+          "answer": "GitLab uses 1Password for password management.",
+          "citations": [
+            "gitlab-password-guidelines::Passwords at GitLab"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 1.0,
+          "faithfulness": 0.8,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 3706.2559999758378,
+          "input_tokens": 282,
+          "output_tokens": 38,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"GitLab uses 1Password for password management.\", \"citations\": [\"gitlab-password-guidelines::Passwords at GitLab\"]}"
+        },
+        {
+          "question_id": "q002",
+          "question": "I forgot my 1Password Master Password. Where should I ask for help?",
+          "expected_output": "Contact IT through the Compass app in Slack or by emailing it-help@gitlab.com.",
+          "expected_citations": [
+            "gitlab-password-guidelines::1Password"
+          ],
+          "answer": "Email it-help@gitlab.com",
+          "citations": [
+            "gitlab-password-guidelines::1Password"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.5333333333333333,
+          "faithfulness": 1.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 5769.128583022393,
+          "input_tokens": 309,
+          "output_tokens": 38,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"Email it-help@gitlab.com\",\n  \"citations\": [\"gitlab-password-guidelines::1Password\"]\n}"
+        },
+        {
+          "question_id": "q003",
+          "question": "What should a GitLab team member do immediately after losing a laptop with company credentials?",
+          "expected_output": "Email panic@gitlab.com immediately to trigger the lost-device security response.",
+          "expected_citations": [
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "answer": "A GitLab team member should send an email to `panic@gitlab.com` right away.",
+          "citations": [
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.4210526315789474,
+          "faithfulness": 0.7777777777777778,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 7387.780582997948,
+          "input_tokens": 296,
+          "output_tokens": 56,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"A GitLab team member should send an email to `panic@gitlab.com` right away.\",\n  \"citations\": [\"gitlab-acceptable-use::Lost or Stolen Procedures\"]\n}"
+        },
+        {
+          "question_id": "q004",
+          "question": "Does GitLab use a corporate VPN for remote access?",
+          "expected_output": "No. GitLab's handbook states that it does not use a corporate VPN.",
+          "expected_citations": [
+            "gitlab-personal-vpn::What is a personal VPN?"
+          ],
+          "answer": "No, GitLab does not use a corporate VPN for remote access.",
+          "citations": [
+            "gitlab-personal-vpn::What is a personal VPN?"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.7058823529411765,
+          "faithfulness": 0.75,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 6393.353833002038,
+          "input_tokens": 280,
+          "output_tokens": 49,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"No, GitLab does not use a corporate VPN for remote access.\",\n  \"citations\": [\"gitlab-personal-vpn::What is a personal VPN?\"]\n}"
+        },
+        {
+          "question_id": "q005",
+          "question": "Can I use a USB drive on a company-managed device without approval?",
+          "expected_output": "No. Removable storage is blocked by default; a business need requires an exception request.",
+          "expected_citations": [
+            "gitlab-acceptable-use::Use of External Media on Company Assets"
+          ],
+          "answer": "No, using a USB drive on a company-managed device without approval is not allowed.",
+          "citations": [
+            "gitlab-acceptable-use::Use of External Media on Company Assets"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.08695652173913043,
+          "faithfulness": 0.5833333333333334,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 6564.40949998796,
+          "input_tokens": 308,
+          "output_tokens": 47,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"No, using a USB drive on a company-managed device without approval is not allowed.\", \"citations\": [\"gitlab-acceptable-use::Use of External Media on Company Assets\"]}"
+        },
+        {
+          "question_id": "q009",
+          "question": "Do most GitLab access requests need manager approval?",
+          "expected_output": "Yes. Most access requests need manager approval, with documented exceptions.",
+          "expected_citations": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "answer": "Yes, most access requests need Manager approval.",
+          "citations": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.8750000000000001,
+          "faithfulness": 0.8571428571428571,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 7061.872749996837,
+          "input_tokens": 263,
+          "output_tokens": 56,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"Yes, most access requests need Manager approval.\",\n  \"citations\": [\"gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?\"]\n}"
+        },
+        {
+          "question_id": "q011",
+          "question": "How can I check whether my Mac is already enrolled in Jamf?",
+          "expected_output": "Open System Settings, then General and Device Management. If the MDM Profile is installed, the laptop is enrolled.",
+          "expected_citations": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "answer": "To check if your Mac is already enrolled in Jamf, select `General` > `Device Management` to see if `MDM Profile` is present.",
+          "citations": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.4615384615384615,
+          "faithfulness": 0.7142857142857143,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 8667.777625028975,
+          "input_tokens": 300,
+          "output_tokens": 69,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"To check if your Mac is already enrolled in Jamf, select `General` > `Device Management` to see if `MDM Profile` is present.\",\n  \"citations\": [\"gitlab-jamf-setup::Step 1: Verify Jamf Enrollment\"]\n}"
+        },
+        {
+          "question_id": "q012",
+          "question": "Can I enroll my laptop in Jamf over hotel Wi-Fi?",
+          "expected_output": "No. The prerequisites say to use a stable internet connection and not mobile internet or hotel Wi-Fi.",
+          "expected_citations": [
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "answer": "It is not recommended to enroll a laptop in Jamf over hotel Wi-Fi.",
+          "citations": [
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.3636363636363637,
+          "faithfulness": 0.7777777777777778,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 6432.148709020112,
+          "input_tokens": 291,
+          "output_tokens": 43,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"It is not recommended to enroll a laptop in Jamf over hotel Wi-Fi.\", \"citations\": [\"gitlab-jamf-setup::Prerequisites\"]}"
+        },
+        {
+          "question_id": "q013",
+          "question": "What is GitLab's most sensitive data classification?",
+          "expected_output": "RED is GitLab's most sensitive data classification.",
+          "expected_citations": [
+            "gitlab-data-classification::RED"
+          ],
+          "answer": "GitLab's most sensitive data is classified as RED.",
+          "citations": [
+            "gitlab-data-classification::RED",
+            "gitlab-ai-in-support::Data classification: quick rules"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.7692307692307692,
+          "faithfulness": 0.7142857142857143,
+          "citation_precision": 0.5,
+          "citation_recall": 1.0,
+          "latency_ms": 7732.636875007302,
+          "input_tokens": 295,
+          "output_tokens": 58,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"GitLab's most sensitive data is classified as RED.\",\n  \"citations\": [\"gitlab-data-classification::RED\", \"gitlab-ai-in-support::Data classification: quick rules\"]\n}"
+        },
+        {
+          "question_id": "q014",
+          "question": "How should a system containing both Yellow and Orange data be classified?",
+          "expected_output": "It should be classified Orange because a system takes the highest classification of the data it stores, transmits, or processes.",
+          "expected_citations": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level"
+          ],
+          "answer": "The system should be classified at the highest data classification level among Yellow and Orange, which is Orange.",
+          "citations": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.608695652173913,
+          "faithfulness": 0.7,
+          "citation_precision": 0.5,
+          "citation_recall": 1.0,
+          "latency_ms": 10379.299417021684,
+          "input_tokens": 326,
+          "output_tokens": 82,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"The system should be classified at the highest data classification level among Yellow and Orange, which is Orange.\"\n\n ,\"citations\": [\"gitlab-data-classification::Combinations of data types may result in a higher system classification level\", \"gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect\"]}"
+        },
+        {
+          "question_id": "q015",
+          "question": "A suspicious email arrived in Gmail. How should I report it?",
+          "expected_output": "Use the PhishArm button in Gmail and follow its reporting instructions.",
+          "expected_citations": [
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "answer": "To report a suspicious email in Gmail, select the PhishArm icon on the right-hand side toolbar.",
+          "citations": [
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.3,
+          "faithfulness": 0.8333333333333334,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 7844.292916008271,
+          "input_tokens": 309,
+          "output_tokens": 60,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"To report a suspicious email in Gmail, select the PhishArm icon on the right-hand side toolbar.\",\n  \"citations\": [\"gitlab-phishing-program::Submission of phishing email via PhishArm\"]\n}"
+        },
+        {
+          "question_id": "q016",
+          "question": "What should I do with a suspicious work-related social media message?",
+          "expected_output": "Use the /security Slack command; if uncertain, ask in the #security Slack channel.",
+          "expected_citations": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "answer": "Use the `/security` Slack command if you suspect a suspicious work-related social media message.",
+          "citations": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.4210526315789474,
+          "faithfulness": 0.5833333333333334,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 7440.562166040763,
+          "input_tokens": 340,
+          "output_tokens": 51,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"Use the `/security` Slack command if you suspect a suspicious work-related social media message.\", \"citations\": [\"gitlab-phishing-program::What to do if you suspect something else is suspicious\"]}"
+        },
+        {
+          "question_id": "q017",
+          "question": "Who initially coordinates an infrastructure incident at GitLab?",
+          "expected_output": "The Reliability Team Engineer on Call, generally an SRE, is first alerted and coordinates the response.",
+          "expected_citations": [
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "answer": "The Reliability Team Engineer on Call at GitLab",
+          "citations": [
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.5882352941176471,
+          "faithfulness": 1.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 6726.772708003409,
+          "input_tokens": 289,
+          "output_tokens": 45,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"The Reliability Team Engineer on Call at GitLab\",\n  \"citations\": [\"gitlab-incident-response-guidance::Coordination\"]\n}"
+        },
+        {
+          "question_id": "q018",
+          "question": "I cannot tell whether an incident belongs to Security or Infrastructure. Where should I report it?",
+          "expected_output": "Use the support web form; the report will be forwarded internally to the appropriate team.",
+          "expected_citations": [
+            "gitlab-incident-response-guidance::Identification"
+          ],
+          "answer": "Use the support web form to report the incident.",
+          "citations": [
+            "gitlab-incident-response-guidance::Identification"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.5882352941176471,
+          "faithfulness": 1.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 6058.134582999628,
+          "input_tokens": 346,
+          "output_tokens": 35,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"Use the support web form to report the incident.\", \"citations\": [\"gitlab-incident-response-guidance::Identification\"]}"
+        },
+        {
+          "question_id": "q019",
+          "question": "May I paste customer credentials into any approved AI support tool if I anonymize the customer name?",
+          "expected_output": "No. Credentials are RED data and the support guidance limits RED data to GitLab Duo tools; removing a customer name does not change the credential's classification.",
+          "expected_citations": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "answer": "No, it is not allowed to paste customer credentials into any approved AI support tool even if the customer name is anonymized.",
+          "citations": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.4827586206896552,
+          "faithfulness": 0.23076923076923078,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 9963.874000008218,
+          "input_tokens": 331,
+          "output_tokens": 77,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\"answer\": \"No, it is not allowed to paste customer credentials into any approved AI support tool even if the customer name is anonymized.\", \"citations\": [\"gitlab-ai-in-support::Data classification: quick rules\", \"gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect\"]}"
+        },
+        {
+          "question_id": "q020",
+          "question": "How long is the current SLA for setting up a new Okta application after the change-management issue is created?",
+          "expected_output": "The current SLA is up to four weeks after the change-management issue is created.",
+          "expected_citations": [
+            "gitlab-okta-app-setup::Timeline Expectations"
+          ],
+          "answer": "The current SLA for setting up a new Okta application after the change management issue is created is up to 4 weeks.",
+          "citations": [
+            "gitlab-okta-app-setup::Timeline Expectations"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.7826086956521738,
+          "faithfulness": 0.9230769230769231,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 7568.2895830250345,
+          "input_tokens": 297,
+          "output_tokens": 58,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"The current SLA for setting up a new Okta application after the change management issue is created is up to 4 weeks.\",\n  \"citations\": [\"gitlab-okta-app-setup::Timeline Expectations\"]\n}"
+        }
+      ],
+      "summary": {
+        "evaluated_questions": 16,
+        "structured_output_reliability": 1.0,
+        "mean_answer_correctness": 0.5617635388955103,
+        "mean_faithfulness": 0.7653197496947497,
+        "mean_citation_precision": 0.9375,
+        "mean_citation_recall": 1.0,
+        "mean_latency_ms": 7231.036864446651,
+        "total_input_tokens": 4862,
+        "total_output_tokens": 862,
+        "estimated_cost_usd": 0.0,
+        "failure_count": 0
+      }
+    },
+    {
+      "provider": "ollama",
+      "model": "phi4-mini:latest",
+      "deployment": "local",
+      "cases": [
+        {
+          "question_id": "q001",
+          "question": "Which password manager does GitLab use?",
+          "expected_output": "GitLab uses 1Password for password management.",
+          "expected_citations": [
+            "gitlab-password-guidelines::Passwords at GitLab"
+          ],
+          "answer": "GitLab utilizes 1Password for password management.",
+          "citations": [
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.8000000000000002,
+          "faithfulness": 1.0,
+          "citation_precision": 0.5,
+          "citation_recall": 1.0,
+          "latency_ms": 6483.500208996702,
+          "input_tokens": 221,
+          "output_tokens": 60,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"GitLab utilizes 1Password for password management.\",\n  \"citations\": [\n    \"gitlab-password-guidelines::Passwords at GitLab\",\n    \"gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive\"\n  ]\n}"
+        },
+        {
+          "question_id": "q002",
+          "question": "I forgot my 1Password Master Password. Where should I ask for help?",
+          "expected_output": "Contact IT through the Compass app in Slack or by emailing it-help@gitlab.com.",
+          "expected_citations": [
+            "gitlab-password-guidelines::1Password"
+          ],
+          "answer": "Post a message in Compass app in slack or email it-help@gitlab.com",
+          "citations": [
+            "gitlab-password-guidelines::1Password"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.761904761904762,
+          "faithfulness": 1.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 5564.986625046004,
+          "input_tokens": 244,
+          "output_tokens": 44,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"Post a message in Compass app in slack or email it-help@gitlab.com\",\n  \"citations\": [\n    \"gitlab-password-guidelines::1Password\"\n  ]\n}"
+        },
+        {
+          "question_id": "q003",
+          "question": "What should a GitLab team member do immediately after losing a laptop with company credentials?",
+          "expected_output": "Email panic@gitlab.com immediately to trigger the lost-device security response.",
+          "expected_citations": [
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "answer": "They should send an email to `panic@gitlab.com` right away.",
+          "citations": [
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.4444444444444445,
+          "faithfulness": 1.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 6430.5678340024315,
+          "input_tokens": 237,
+          "output_tokens": 46,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"They should send an email to `panic@gitlab.com` right away.\",\n  \"citations\": [\n    \"gitlab-acceptable-use::Lost or Stolen Procedures\"\n  ]\n}"
+        },
+        {
+          "question_id": "q004",
+          "question": "Does GitLab use a corporate VPN for remote access?",
+          "expected_output": "No. GitLab's handbook states that it does not use a corporate VPN.",
+          "expected_citations": [
+            "gitlab-personal-vpn::What is a personal VPN?"
+          ],
+          "answer": "No",
+          "citations": [
+            "gitlab-personal-vpn::What is a personal VPN?"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.19999999999999998,
+          "faithfulness": 0.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 4247.154625016265,
+          "input_tokens": 219,
+          "output_tokens": 33,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"No\",\n  \"citations\": [\n    \"gitlab-personal-vpn::What is a personal VPN?\"\n  ]\n}"
+        },
+        {
+          "question_id": "q005",
+          "question": "Can I use a USB drive on a company-managed device without approval?",
+          "expected_output": "No. Removable storage is blocked by default; a business need requires an exception request.",
+          "expected_citations": [
+            "gitlab-acceptable-use::Use of External Media on Company Assets"
+          ],
+          "answer": "No, you cannot use a USB drive on a company-managed device without approval.",
+          "citations": [
+            "gitlab-acceptable-use::Use of External Media on Company Assets",
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.08695652173913043,
+          "faithfulness": 0.5,
+          "citation_precision": 0.5,
+          "citation_recall": 1.0,
+          "latency_ms": 8695.617292018142,
+          "input_tokens": 249,
+          "output_tokens": 75,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"No, you cannot use a USB drive on a company-managed device without approval.\",\n  \"citations\": [\n    \"gitlab-acceptable-use::Use of External Media on Company Assets\",\n    \"gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?\"\n  ]\n}"
+        },
+        {
+          "question_id": "q009",
+          "question": "Do most GitLab access requests need manager approval?",
+          "expected_output": "Yes. Most access requests need manager approval, with documented exceptions.",
+          "expected_citations": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "answer": "Yes, most access requests need manager approval.",
+          "citations": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.8750000000000001,
+          "faithfulness": 0.8571428571428571,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 7536.318374972325,
+          "input_tokens": 206,
+          "output_tokens": 52,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"Yes, most access requests need manager approval.\",\n  \"citations\": [\n    \"gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?\"\n  ]\n}"
+        },
+        {
+          "question_id": "q011",
+          "question": "How can I check whether my Mac is already enrolled in Jamf?",
+          "expected_output": "Open System Settings, then General and Device Management. If the MDM Profile is installed, the laptop is enrolled.",
+          "expected_citations": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "answer": "Select `General` > `Device Management` in Jamf Pro on your Mac.",
+          "citations": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.28571428571428575,
+          "faithfulness": 0.5555555555555556,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 6644.053333031479,
+          "input_tokens": 247,
+          "output_tokens": 52,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"Select `General` > `Device Management` in Jamf Pro on your Mac.\",\n  \"citations\": [\n    \"gitlab-jamf-setup::Step 1: Verify Jamf Enrollment\"\n  ]\n}"
+        },
+        {
+          "question_id": "q012",
+          "question": "Can I enroll my laptop in Jamf over hotel Wi-Fi?",
+          "expected_output": "No. The prerequisites say to use a stable internet connection and not mobile internet or hotel Wi-Fi.",
+          "expected_citations": [
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "answer": "No, you cannot enroll your laptop in Jamf over hotel Wi-Fi.",
+          "citations": [
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.33333333333333337,
+          "faithfulness": 0.5454545454545454,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 5959.5485419849865,
+          "input_tokens": 238,
+          "output_tokens": 44,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"No, you cannot enroll your laptop in Jamf over hotel Wi-Fi.\",\n  \"citations\": [\n    \"gitlab-jamf-setup::Prerequisites\"\n  ]\n}"
+        },
+        {
+          "question_id": "q013",
+          "question": "What is GitLab's most sensitive data classification?",
+          "expected_output": "RED is GitLab's most sensitive data classification.",
+          "expected_citations": [
+            "gitlab-data-classification::RED"
+          ],
+          "answer": "GitLab's most sensitive data classification is RED.",
+          "citations": [
+            "gitlab-data-classification::RED",
+            "gitlab-ai-in-support::Data classification: quick rules"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 1.0,
+          "faithfulness": 0.8333333333333334,
+          "citation_precision": 0.5,
+          "citation_recall": 1.0,
+          "latency_ms": 6139.318249945063,
+          "input_tokens": 235,
+          "output_tokens": 50,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"GitLab's most sensitive data classification is RED.\",\n  \"citations\": [\n    \"gitlab-data-classification::RED\",\n    \"gitlab-ai-in-support::Data classification: quick rules\"\n  ]\n}"
+        },
+        {
+          "question_id": "q014",
+          "question": "How should a system containing both Yellow and Orange data be classified?",
+          "expected_output": "It should be classified Orange because a system takes the highest classification of the data it stores, transmits, or processes.",
+          "expected_citations": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level"
+          ],
+          "answer": "The system containing both Yellow and Orange data should be classified at the highest level of either color.",
+          "citations": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level",
+            "gitlab-ai-in-support::Data classification: quick rules"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.48000000000000004,
+          "faithfulness": 0.5,
+          "citation_precision": 0.5,
+          "citation_recall": 1.0,
+          "latency_ms": 8729.004291992169,
+          "input_tokens": 270,
+          "output_tokens": 71,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"The system containing both Yellow and Orange data should be classified at the highest level of either color.\",\n  \"citations\": [\n    \"gitlab-data-classification::Combinations of data types may result in a higher system classification level\",\n    \"gitlab-ai-in-support::Data classification: quick rules\"\n  ]\n}"
+        },
+        {
+          "question_id": "q015",
+          "question": "A suspicious email arrived in Gmail. How should I report it?",
+          "expected_output": "Use the PhishArm button in Gmail and follow its reporting instructions.",
+          "expected_citations": [
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "answer": "Select the PhishArm icon on the right-hand side toolbar in Gmail.",
+          "citations": [
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.23529411764705882,
+          "faithfulness": 1.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 6163.358208024874,
+          "input_tokens": 245,
+          "output_tokens": 48,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"Select the PhishArm icon on the right-hand side toolbar in Gmail.\",\n  \"citations\": [\n    \"gitlab-phishing-program::Submission of phishing email via PhishArm\"\n  ]\n}"
+        },
+        {
+          "question_id": "q016",
+          "question": "What should I do with a suspicious work-related social media message?",
+          "expected_output": "Use the /security Slack command; if uncertain, ask in the #security Slack channel.",
+          "expected_citations": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "answer": "If you receive suspicious work-related social media messages, please use the `/security` Slack command.",
+          "citations": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.4,
+          "faithfulness": 0.6153846153846154,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 7393.573332985397,
+          "input_tokens": 270,
+          "output_tokens": 54,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"If you receive suspicious work-related social media messages, please use the `/security` Slack command.\",\n  \"citations\": [\n    \"gitlab-phishing-program::What to do if you suspect something else is suspicious\"\n  ]\n}"
+        },
+        {
+          "question_id": "q017",
+          "question": "Who initially coordinates an infrastructure incident at GitLab?",
+          "expected_output": "The Reliability Team Engineer on Call, generally an SRE, is first alerted and coordinates the response.",
+          "expected_citations": [
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "answer": "The Reliability Team Engineer on Call",
+          "citations": [
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.625,
+          "faithfulness": 1.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 4315.1167500182055,
+          "input_tokens": 225,
+          "output_tokens": 32,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"The Reliability Team Engineer on Call\",\n  \"citations\": [\"gitlab-incident-response-guidance::Coordination\"]\n}"
+        },
+        {
+          "question_id": "q018",
+          "question": "I cannot tell whether an incident belongs to Security or Infrastructure. Where should I report it?",
+          "expected_output": "Use the support web form; the report will be forwarded internally to the appropriate team.",
+          "expected_citations": [
+            "gitlab-incident-response-guidance::Identification"
+          ],
+          "answer": "Report your incident using the support web form.",
+          "citations": [
+            "gitlab-incident-response-guidance::Identification"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.4444444444444444,
+          "faithfulness": 1.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 5267.799041001126,
+          "input_tokens": 277,
+          "output_tokens": 37,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"Report your incident using the support web form.\",\n  \"citations\": [\n    \"gitlab-incident-response-guidance::Identification\"\n  ]\n}"
+        },
+        {
+          "question_id": "q019",
+          "question": "May I paste customer credentials into any approved AI support tool if I anonymize the customer name?",
+          "expected_output": "No. Credentials are RED data and the support guidance limits RED data to GitLab Duo tools; removing a customer name does not change the credential's classification.",
+          "expected_citations": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "answer": "No, customer credentials should not simply rely on anonymization for safe handling in approved AI tools.",
+          "citations": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.3448275862068966,
+          "faithfulness": 0.15384615384615385,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 9218.338834005408,
+          "input_tokens": 273,
+          "output_tokens": 73,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"No, customer credentials should not simply rely on anonymization for safe handling in approved AI tools.\",\n  \"citations\": [\n    \"gitlab-ai-in-support::Data classification: quick rules\",\n    \"gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect\"\n  ]\n}"
+        },
+        {
+          "question_id": "q020",
+          "question": "How long is the current SLA for setting up a new Okta application after the change-management issue is created?",
+          "expected_output": "The current SLA is up to four weeks after the change-management issue is created.",
+          "expected_citations": [
+            "gitlab-okta-app-setup::Timeline Expectations"
+          ],
+          "answer": "The current SLA for new Okta applications after the change-management issue is created is up to 4 weeks.",
+          "citations": [
+            "gitlab-okta-app-setup::Timeline Expectations"
+          ],
+          "structured_output_valid": true,
+          "answer_correctness": 0.8181818181818182,
+          "faithfulness": 1.0,
+          "citation_precision": 1.0,
+          "citation_recall": 1.0,
+          "latency_ms": 5865.06099998951,
+          "input_tokens": 244,
+          "output_tokens": 47,
+          "estimated_cost_usd": 0.0,
+          "error": null,
+          "raw_output": "{\n  \"answer\": \"The current SLA for new Okta applications after the change-management issue is created is up to 4 weeks.\",\n  \"citations\": [\"gitlab-okta-app-setup::Timeline Expectations\"]\n}"
+        }
+      ],
+      "summary": {
+        "evaluated_questions": 16,
+        "structured_output_reliability": 1.0,
+        "mean_answer_correctness": 0.5084438321010109,
+        "mean_faithfulness": 0.7225448162948163,
+        "mean_citation_precision": 0.875,
+        "mean_citation_recall": 1.0,
+        "mean_latency_ms": 6540.83228393938,
+        "total_input_tokens": 3900,
+        "total_output_tokens": 818,
+        "estimated_cost_usd": 0.0,
+        "failure_count": 0
+      }
+    }
+  ]
+}

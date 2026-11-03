@@ -30,6 +30,12 @@ ANSWER_QUALITY_RESULTS = (
     / "baselines"
     / "answer-quality-v0.2.json"
 )
+MODEL_COMPARISON_RESULTS = (
+    ROOT
+    / "artifacts"
+    / "baselines"
+    / "model-comparison-local-v0.1.json"
+)
 QUALITY_GATES = ROOT / "config" / "quality-gates.json"
 SOURCES = ROOT / "data" / "sources.json"
 BENCHMARK = ROOT / "data" / "benchmark.json"
@@ -101,7 +107,49 @@ st.set_page_config(
     page_icon="📊",
     layout="wide",
 )
+def model_comparison_frame(results: dict) -> pd.DataFrame:
+    """Convert saved model summaries into dashboard rows."""
+    display_names = {
+        "llama3.2:3b-instruct-q4_K_M": "Llama 3.2 3B",
+        "mistral:7b": "Mistral 7B",
+        "phi4-mini:latest": "Phi-4 Mini",
+    }
 
+    rows = []
+
+    for report in results["models"]:
+        summary = report["summary"]
+        model = report["model"]
+
+        rows.append(
+            {
+                "model": display_names.get(model, model),
+                "structured_output_reliability": summary[
+                    "structured_output_reliability"
+                ],
+                "answer_correctness": summary[
+                    "mean_answer_correctness"
+                ],
+                "faithfulness": summary["mean_faithfulness"],
+                "citation_precision": summary[
+                    "mean_citation_precision"
+                ],
+                "citation_recall": summary[
+                    "mean_citation_recall"
+                ],
+                "mean_latency_seconds": (
+                    summary["mean_latency_ms"] / 1000
+                ),
+                "input_tokens": summary["total_input_tokens"],
+                "output_tokens": summary["total_output_tokens"],
+                "estimated_cost_usd": summary[
+                    "estimated_cost_usd"
+                ],
+                "failures": summary["failure_count"],
+            }
+        )
+
+    return pd.DataFrame(rows)
 st.title("Enterprise RAG Reliability & Evaluation Platform")
 st.caption(
     "Credential-free dashboard generated from versioned evaluation artifacts"
@@ -110,12 +158,18 @@ st.caption(
 retrieval_results = load_json(RETRIEVAL_RESULTS)
 workflow_results = load_json(WORKFLOW_RESULTS)
 answer_quality_results = load_json(ANSWER_QUALITY_RESULTS)
+model_comparison_results = load_json(
+    MODEL_COMPARISON_RESULTS
+)
 quality_gates = load_json(QUALITY_GATES)
 sources = load_json(SOURCES)
 benchmark = load_json(BENCHMARK)
 
 retrieval_df = retrieval_frame(retrieval_results)
 failure_df = retrieval_failures(retrieval_results)
+model_df = model_comparison_frame(
+    model_comparison_results
+)
 
 best_recall = retrieval_df["recall_at_3"].max()
 best_mrr = retrieval_df["mrr"].max()
@@ -126,6 +180,7 @@ answer_quality_summary = answer_quality_results["summary"]
     overview_tab,
     retrieval_tab,
     answer_quality_tab,
+    model_comparison_tab,
     workflow_tab,
     readiness_tab,
 ) = st.tabs(
@@ -133,10 +188,201 @@ answer_quality_summary = answer_quality_results["summary"]
         "Overview",
         "Retrieval experiments",
         "Answer quality",
+        "Model comparison",
         "Workflow decisions",
         "Production readiness",
     ]
 )
+
+with model_comparison_tab:
+    st.subheader("Local model quality, latency, and cost")
+
+    best_quality = model_df.loc[
+        model_df["answer_correctness"].idxmax()
+    ]
+    fastest = model_df.loc[
+        model_df["mean_latency_seconds"].idxmin()
+    ]
+    best_citations = model_df.loc[
+        model_df["citation_precision"].idxmax()
+    ]
+
+    comparison_metrics = st.columns(4)
+    comparison_metrics[0].metric(
+        "Best overall quality",
+        best_quality["model"],
+        f"{best_quality['answer_correctness']:.1%} correctness",
+    )
+    comparison_metrics[1].metric(
+        "Fastest model",
+        fastest["model"],
+        f"{fastest['mean_latency_seconds']:.2f} seconds",
+    )
+    comparison_metrics[2].metric(
+        "Best citation precision",
+        best_citations["model"],
+        f"{best_citations['citation_precision']:.1%}",
+    )
+    comparison_metrics[3].metric(
+        "Structured output",
+        f"{model_df['structured_output_reliability'].min():.0%}",
+        "minimum across models",
+    )
+
+    st.subheader("Quality comparison")
+
+    model_quality_long = model_df.melt(
+        id_vars=["model"],
+        value_vars=[
+            "answer_correctness",
+            "faithfulness",
+            "citation_precision",
+            "citation_recall",
+        ],
+        var_name="metric",
+        value_name="score",
+    )
+
+    model_quality_chart = px.bar(
+        model_quality_long,
+        x="model",
+        y="score",
+        color="metric",
+        barmode="group",
+        range_y=[0, 1],
+        labels={
+            "model": "Model",
+            "score": "Score",
+            "metric": "Metric",
+        },
+        color_discrete_map={
+            "answer_correctness": "#2563EB",
+            "faithfulness": "#16A34A",
+            "citation_precision": "#F59E0B",
+            "citation_recall": "#8B5CF6",
+        },
+    )
+    model_quality_chart.update_layout(
+        legend={
+            "orientation": "h",
+            "yanchor": "bottom",
+            "y": 1.02,
+            "xanchor": "left",
+            "x": 0,
+        },
+        legend_title_text="",
+    )
+    st.plotly_chart(
+        model_quality_chart,
+        width="stretch",
+    )
+
+    st.subheader("Quality and latency tradeoff")
+
+    model_tradeoff_chart = px.scatter(
+        model_df,
+        x="mean_latency_seconds",
+        y="answer_correctness",
+        size="faithfulness",
+        color="model",
+        hover_data=[
+            "citation_precision",
+            "citation_recall",
+            "input_tokens",
+            "output_tokens",
+        ],
+        labels={
+            "mean_latency_seconds": "Mean latency (seconds)",
+            "answer_correctness": "Answer correctness",
+            "faithfulness": "Faithfulness",
+            "model": "Model",
+        },
+    )
+    model_tradeoff_chart.update_layout(
+        legend={
+            "orientation": "h",
+            "yanchor": "bottom",
+            "y": 1.02,
+            "xanchor": "left",
+            "x": 0,
+        },
+        legend_title_text="",
+    )
+    st.plotly_chart(
+        model_tradeoff_chart,
+        width="stretch",
+    )
+
+    st.subheader("Token usage")
+
+    token_long = model_df.melt(
+        id_vars=["model"],
+        value_vars=["input_tokens", "output_tokens"],
+        var_name="token_type",
+        value_name="tokens",
+    )
+
+    token_chart = px.bar(
+        token_long,
+        x="model",
+        y="tokens",
+        color="token_type",
+        barmode="stack",
+        labels={
+            "model": "Model",
+            "tokens": "Tokens over 16 cases",
+            "token_type": "Token type",
+        },
+        color_discrete_map={
+            "input_tokens": "#0EA5E9",
+            "output_tokens": "#F97316",
+        },
+    )
+    token_chart.update_layout(
+        legend={
+            "orientation": "h",
+            "yanchor": "bottom",
+            "y": 1.02,
+            "xanchor": "left",
+            "x": 0,
+        },
+        legend_title_text="",
+    )
+    st.plotly_chart(token_chart, width="stretch")
+
+    display_model_df = model_df.copy()
+    display_model_df["estimated_cost_usd"] = (
+        display_model_df["estimated_cost_usd"].map(
+            lambda value: f"${value:.2f}"
+        )
+    )
+
+    st.dataframe(
+        display_model_df.style.format(
+            {
+                "structured_output_reliability": "{:.1%}",
+                "answer_correctness": "{:.1%}",
+                "faithfulness": "{:.1%}",
+                "citation_precision": "{:.1%}",
+                "citation_recall": "{:.1%}",
+                "mean_latency_seconds": "{:.2f}",
+            }
+        ),
+        width="stretch",
+        hide_index=True,
+    )
+
+    st.success(
+        "Mistral 7B provides the strongest quality and citation "
+        "performance in the current local comparison. Llama 3.2 "
+        "3B is the fastest option."
+    )
+
+    st.caption(
+        "Metrics use deterministic lexical proxies over 16 verified "
+        "cases. Latency was measured on one local Mac after warm-up. "
+        "Local inference has zero API cost but still consumes compute."
+    )
 
 with overview_tab:
     metric_columns = st.columns(4)
