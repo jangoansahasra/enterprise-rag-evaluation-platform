@@ -1,0 +1,2409 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-11-10T16:29:17.830640+00:00",
+  "source_registry": "data/sources.json",
+  "source_corpus": "data/corpus.json",
+  "benchmark": "data/benchmark.json",
+  "original_passage_count": 19,
+  "comparison_controls": {
+    "retriever": "bm25",
+    "top_k": 3,
+    "changed_variable": "chunking_configuration"
+  },
+  "results": {
+    "heading_aware": {
+      "manifest": {
+        "strategy": "heading_aware",
+        "chunk_size": 0,
+        "overlap": 0,
+        "source_count": 10,
+        "chunk_count": 19,
+        "document_versions": {
+          "gitlab-acceptable-use": "64f447db74431493",
+          "gitlab-access-request-faq": "a1ed4a0286271ca0",
+          "gitlab-ai-in-support": "effc25cd256087df",
+          "gitlab-data-classification": "8a1b7a96554b29a5",
+          "gitlab-incident-response-guidance": "26e196b859a2f751",
+          "gitlab-jamf-setup": "032ebb7075ad899b",
+          "gitlab-okta-app-setup": "b460e6c61b279c74",
+          "gitlab-password-guidelines": "86f327b3d3675886",
+          "gitlab-personal-vpn": "da035c21db2ed092",
+          "gitlab-phishing-program": "7486624763a65577"
+        }
+      },
+      "summary": {
+        "evaluated_questions": 16,
+        "recall_at_3": 0.8125,
+        "mean_reciprocal_rank": 0.6875,
+        "mean_query_time_ms": 0.018002625438384712,
+        "average_chunk_characters": 110.52631578947368,
+        "index_growth_ratio": 1.0
+      },
+      "questions": [
+        {
+          "question_id": "q001",
+          "category": "password",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::heading::000",
+            "gitlab-password-guidelines::Passwords at GitLab::heading::000",
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q002",
+          "category": "password",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-password-guidelines::1Password"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab::heading::000",
+            "gitlab-password-guidelines::1Password::heading::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-password-guidelines::1Password",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q003",
+          "category": "security_incident",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::heading::000",
+            "gitlab-personal-vpn::What is a personal VPN?::heading::000",
+            "gitlab-ai-in-support::Data classification: quick rules::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-ai-in-support::Data classification: quick rules"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q004",
+          "category": "vpn",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::heading::000",
+            "gitlab-password-guidelines::Passwords at GitLab::heading::000",
+            "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q005",
+          "category": "acceptable_use",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-acceptable-use::Use of External Media on Company Assets"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::heading::000",
+            "gitlab-acceptable-use::Use of External Media on Company Assets::heading::000",
+            "gitlab-jamf-setup::Prerequisites::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-acceptable-use::Use of External Media on Company Assets",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q009",
+          "category": "access_control",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?::heading::000",
+            "gitlab-data-classification::RED::heading::000",
+            "gitlab-jamf-setup::Prerequisites::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?",
+            "gitlab-data-classification::RED",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q011",
+          "category": "device_management",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment::heading::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::heading::000",
+            "gitlab-jamf-setup::Prerequisites::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q012",
+          "category": "device_management",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::heading::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::heading::000",
+            "gitlab-password-guidelines::1Password::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+            "gitlab-password-guidelines::1Password"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q013",
+          "category": "data_governance",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-data-classification::RED"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-data-classification::RED::heading::000",
+            "gitlab-ai-in-support::Data classification: quick rules::heading::000",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-data-classification::RED",
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q014",
+          "category": "data_governance",
+          "difficulty": "reasoning",
+          "relevant_parent_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level::heading::000",
+            "gitlab-data-classification::RED::heading::000",
+            "gitlab-incident-response-guidance::Coordination::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level",
+            "gitlab-data-classification::RED",
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q015",
+          "category": "phishing",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-password-guidelines::1Password::heading::000",
+            "gitlab-phishing-program::Submission of phishing email via PhishArm::heading::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-password-guidelines::1Password",
+            "gitlab-phishing-program::Submission of phishing email via PhishArm",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q016",
+          "category": "phishing",
+          "difficulty": "ambiguous",
+          "relevant_parent_ids": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::heading::000",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive::heading::000",
+            "gitlab-password-guidelines::1Password::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+            "gitlab-password-guidelines::1Password"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q017",
+          "category": "incident_response",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-incident-response-guidance::Identification::heading::000",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive::heading::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q018",
+          "category": "incident_response",
+          "difficulty": "ambiguous",
+          "relevant_parent_ids": [
+            "gitlab-incident-response-guidance::Identification"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-incident-response-guidance::Identification::heading::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::heading::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q019",
+          "category": "ai_data_handling",
+          "difficulty": "multi_document",
+          "relevant_parent_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules::heading::000",
+            "gitlab-incident-response-guidance::Identification::heading::000",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q020",
+          "category": "service_level",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations::heading::000",
+            "gitlab-incident-response-guidance::Coordination::heading::000",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment::heading::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations",
+            "gitlab-incident-response-guidance::Coordination",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "first_relevant_rank": 1
+        }
+      ],
+      "configuration": {
+        "name": "heading_aware",
+        "strategy": "heading_aware",
+        "chunk_size": 0,
+        "overlap": 0
+      }
+    },
+    "fixed_80_20": {
+      "manifest": {
+        "strategy": "fixed_size",
+        "chunk_size": 80,
+        "overlap": 20,
+        "source_count": 10,
+        "chunk_count": 37,
+        "document_versions": {
+          "gitlab-acceptable-use": "64f447db74431493",
+          "gitlab-access-request-faq": "a1ed4a0286271ca0",
+          "gitlab-ai-in-support": "effc25cd256087df",
+          "gitlab-data-classification": "8a1b7a96554b29a5",
+          "gitlab-incident-response-guidance": "26e196b859a2f751",
+          "gitlab-jamf-setup": "032ebb7075ad899b",
+          "gitlab-okta-app-setup": "b460e6c61b279c74",
+          "gitlab-password-guidelines": "86f327b3d3675886",
+          "gitlab-personal-vpn": "da035c21db2ed092",
+          "gitlab-phishing-program": "7486624763a65577"
+        }
+      },
+      "summary": {
+        "evaluated_questions": 16,
+        "recall_at_3": 0.875,
+        "mean_reciprocal_rank": 0.6979166666666666,
+        "mean_query_time_ms": 0.13259376282803714,
+        "average_chunk_characters": 66.37837837837837,
+        "index_growth_ratio": 1.9473684210526316
+      },
+      "questions": [
+        {
+          "question_id": "q001",
+          "category": "password",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::fixed-80-20::000",
+            "gitlab-password-guidelines::Passwords at GitLab::fixed-80-20::000",
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?::fixed-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q002",
+          "category": "password",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-password-guidelines::1Password"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab::fixed-80-20::000",
+            "gitlab-password-guidelines::1Password::fixed-80-20::001",
+            "gitlab-incident-response-guidance::Identification::fixed-80-20::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-password-guidelines::1Password",
+            "gitlab-incident-response-guidance::Identification"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q003",
+          "category": "security_incident",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::fixed-80-20::000",
+            "gitlab-personal-vpn::What is a personal VPN?::fixed-80-20::000",
+            "gitlab-ai-in-support::Data classification: quick rules::fixed-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-ai-in-support::Data classification: quick rules"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q004",
+          "category": "vpn",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::fixed-80-20::000",
+            "gitlab-password-guidelines::Passwords at GitLab::fixed-80-20::000",
+            "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)::fixed-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q005",
+          "category": "acceptable_use",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-acceptable-use::Use of External Media on Company Assets"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::fixed-80-20::000",
+            "gitlab-acceptable-use::Use of External Media on Company Assets::fixed-80-20::001",
+            "gitlab-jamf-setup::Prerequisites::fixed-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-acceptable-use::Use of External Media on Company Assets",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q009",
+          "category": "access_control",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?::fixed-80-20::000",
+            "gitlab-data-classification::RED::fixed-80-20::000",
+            "gitlab-jamf-setup::Prerequisites::fixed-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?",
+            "gitlab-data-classification::RED",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q011",
+          "category": "device_management",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment::fixed-80-20::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::fixed-80-20::001",
+            "gitlab-jamf-setup::Prerequisites::fixed-80-20::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q012",
+          "category": "device_management",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::fixed-80-20::001",
+            "gitlab-jamf-setup::Prerequisites::fixed-80-20::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::fixed-80-20::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q013",
+          "category": "data_governance",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-data-classification::RED"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-data-classification::RED::fixed-80-20::000",
+            "gitlab-ai-in-support::Data classification: quick rules::fixed-80-20::000",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect::fixed-80-20::002"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-data-classification::RED",
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q014",
+          "category": "data_governance",
+          "difficulty": "reasoning",
+          "relevant_parent_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level::fixed-80-20::000",
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level::fixed-80-20::001",
+            "gitlab-incident-response-guidance::Coordination::fixed-80-20::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level",
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level",
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q015",
+          "category": "phishing",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-password-guidelines::1Password::fixed-80-20::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::fixed-80-20::000",
+            "gitlab-phishing-program::Submission of phishing email via PhishArm::fixed-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-password-guidelines::1Password",
+            "gitlab-acceptable-use::Lost or Stolen Procedures",
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "first_relevant_rank": 3
+        },
+        {
+          "question_id": "q016",
+          "category": "phishing",
+          "difficulty": "ambiguous",
+          "relevant_parent_ids": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::fixed-80-20::000",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive::fixed-80-20::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::fixed-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 3
+        },
+        {
+          "question_id": "q017",
+          "category": "incident_response",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-incident-response-guidance::Identification::fixed-80-20::000",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive::fixed-80-20::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::fixed-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q018",
+          "category": "incident_response",
+          "difficulty": "ambiguous",
+          "relevant_parent_ids": [
+            "gitlab-incident-response-guidance::Identification"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-incident-response-guidance::Identification::fixed-80-20::001",
+            "gitlab-incident-response-guidance::Identification::fixed-80-20::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::fixed-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q019",
+          "category": "ai_data_handling",
+          "difficulty": "multi_document",
+          "relevant_parent_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules::fixed-80-20::000",
+            "gitlab-incident-response-guidance::Identification::fixed-80-20::001",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::fixed-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q020",
+          "category": "service_level",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations::fixed-80-20::000",
+            "gitlab-okta-app-setup::Timeline Expectations::fixed-80-20::001",
+            "gitlab-incident-response-guidance::Coordination::fixed-80-20::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations",
+            "gitlab-okta-app-setup::Timeline Expectations",
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "first_relevant_rank": 1
+        }
+      ],
+      "configuration": {
+        "name": "fixed_80_20",
+        "strategy": "fixed_size",
+        "chunk_size": 80,
+        "overlap": 20
+      }
+    },
+    "fixed_120_20": {
+      "manifest": {
+        "strategy": "fixed_size",
+        "chunk_size": 120,
+        "overlap": 20,
+        "source_count": 10,
+        "chunk_count": 26,
+        "document_versions": {
+          "gitlab-acceptable-use": "64f447db74431493",
+          "gitlab-access-request-faq": "a1ed4a0286271ca0",
+          "gitlab-ai-in-support": "effc25cd256087df",
+          "gitlab-data-classification": "8a1b7a96554b29a5",
+          "gitlab-incident-response-guidance": "26e196b859a2f751",
+          "gitlab-jamf-setup": "032ebb7075ad899b",
+          "gitlab-okta-app-setup": "b460e6c61b279c74",
+          "gitlab-password-guidelines": "86f327b3d3675886",
+          "gitlab-personal-vpn": "da035c21db2ed092",
+          "gitlab-phishing-program": "7486624763a65577"
+        }
+      },
+      "summary": {
+        "evaluated_questions": 16,
+        "recall_at_3": 0.8125,
+        "mean_reciprocal_rank": 0.65625,
+        "mean_query_time_ms": 0.05465892900247127,
+        "average_chunk_characters": 86.07692307692308,
+        "index_growth_ratio": 1.368421052631579
+      },
+      "questions": [
+        {
+          "question_id": "q001",
+          "category": "password",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::fixed-120-20::000",
+            "gitlab-password-guidelines::Passwords at GitLab::fixed-120-20::000",
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?::fixed-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q002",
+          "category": "password",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-password-guidelines::1Password"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab::fixed-120-20::000",
+            "gitlab-password-guidelines::1Password::fixed-120-20::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::fixed-120-20::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-password-guidelines::1Password",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q003",
+          "category": "security_incident",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::fixed-120-20::000",
+            "gitlab-personal-vpn::What is a personal VPN?::fixed-120-20::000",
+            "gitlab-ai-in-support::Data classification: quick rules::fixed-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-ai-in-support::Data classification: quick rules"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q004",
+          "category": "vpn",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::fixed-120-20::000",
+            "gitlab-password-guidelines::Passwords at GitLab::fixed-120-20::000",
+            "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)::fixed-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q005",
+          "category": "acceptable_use",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-acceptable-use::Use of External Media on Company Assets"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::fixed-120-20::000",
+            "gitlab-acceptable-use::Use of External Media on Company Assets::fixed-120-20::000",
+            "gitlab-acceptable-use::Use of External Media on Company Assets::fixed-120-20::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-acceptable-use::Use of External Media on Company Assets",
+            "gitlab-acceptable-use::Use of External Media on Company Assets"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q009",
+          "category": "access_control",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?::fixed-120-20::000",
+            "gitlab-data-classification::RED::fixed-120-20::000",
+            "gitlab-jamf-setup::Prerequisites::fixed-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?",
+            "gitlab-data-classification::RED",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q011",
+          "category": "device_management",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::fixed-120-20::001",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment::fixed-120-20::000",
+            "gitlab-password-guidelines::1Password::fixed-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment",
+            "gitlab-password-guidelines::1Password"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q012",
+          "category": "device_management",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::fixed-120-20::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::fixed-120-20::001",
+            "gitlab-password-guidelines::1Password::fixed-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+            "gitlab-password-guidelines::1Password"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q013",
+          "category": "data_governance",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-data-classification::RED"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-data-classification::RED::fixed-120-20::000",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect::fixed-120-20::001",
+            "gitlab-ai-in-support::Data classification: quick rules::fixed-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-data-classification::RED",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect",
+            "gitlab-ai-in-support::Data classification: quick rules"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q014",
+          "category": "data_governance",
+          "difficulty": "reasoning",
+          "relevant_parent_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level::fixed-120-20::000",
+            "gitlab-incident-response-guidance::Identification::fixed-120-20::001",
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level::fixed-120-20::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level",
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q015",
+          "category": "phishing",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-password-guidelines::1Password::fixed-120-20::000",
+            "gitlab-phishing-program::Submission of phishing email via PhishArm::fixed-120-20::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::fixed-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-password-guidelines::1Password",
+            "gitlab-phishing-program::Submission of phishing email via PhishArm",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q016",
+          "category": "phishing",
+          "difficulty": "ambiguous",
+          "relevant_parent_ids": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::fixed-120-20::000",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive::fixed-120-20::000",
+            "gitlab-password-guidelines::1Password::fixed-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+            "gitlab-password-guidelines::1Password"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q017",
+          "category": "incident_response",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-incident-response-guidance::Identification::fixed-120-20::000",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive::fixed-120-20::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::fixed-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q018",
+          "category": "incident_response",
+          "difficulty": "ambiguous",
+          "relevant_parent_ids": [
+            "gitlab-incident-response-guidance::Identification"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-incident-response-guidance::Identification::fixed-120-20::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::fixed-120-20::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::fixed-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-acceptable-use::Lost or Stolen Procedures",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q019",
+          "category": "ai_data_handling",
+          "difficulty": "multi_document",
+          "relevant_parent_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules::fixed-120-20::000",
+            "gitlab-incident-response-guidance::Identification::fixed-120-20::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::fixed-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q020",
+          "category": "service_level",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations::fixed-120-20::000",
+            "gitlab-incident-response-guidance::Coordination::fixed-120-20::000",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment::fixed-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations",
+            "gitlab-incident-response-guidance::Coordination",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "first_relevant_rank": 1
+        }
+      ],
+      "configuration": {
+        "name": "fixed_120_20",
+        "strategy": "fixed_size",
+        "chunk_size": 120,
+        "overlap": 20
+      }
+    },
+    "fixed_160_40": {
+      "manifest": {
+        "strategy": "fixed_size",
+        "chunk_size": 160,
+        "overlap": 40,
+        "source_count": 10,
+        "chunk_count": 24,
+        "document_versions": {
+          "gitlab-acceptable-use": "64f447db74431493",
+          "gitlab-access-request-faq": "a1ed4a0286271ca0",
+          "gitlab-ai-in-support": "effc25cd256087df",
+          "gitlab-data-classification": "8a1b7a96554b29a5",
+          "gitlab-incident-response-guidance": "26e196b859a2f751",
+          "gitlab-jamf-setup": "032ebb7075ad899b",
+          "gitlab-okta-app-setup": "b460e6c61b279c74",
+          "gitlab-password-guidelines": "86f327b3d3675886",
+          "gitlab-personal-vpn": "da035c21db2ed092",
+          "gitlab-phishing-program": "7486624763a65577"
+        }
+      },
+      "summary": {
+        "evaluated_questions": 16,
+        "recall_at_3": 0.8125,
+        "mean_reciprocal_rank": 0.6770833333333334,
+        "mean_query_time_ms": 0.04877858009422198,
+        "average_chunk_characters": 95.70833333333333,
+        "index_growth_ratio": 1.263157894736842
+      },
+      "questions": [
+        {
+          "question_id": "q001",
+          "category": "password",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::fixed-160-40::000",
+            "gitlab-password-guidelines::Passwords at GitLab::fixed-160-40::000",
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?::fixed-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q002",
+          "category": "password",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-password-guidelines::1Password"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab::fixed-160-40::000",
+            "gitlab-password-guidelines::1Password::fixed-160-40::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::fixed-160-40::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-password-guidelines::1Password",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q003",
+          "category": "security_incident",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::fixed-160-40::000",
+            "gitlab-personal-vpn::What is a personal VPN?::fixed-160-40::000",
+            "gitlab-ai-in-support::Data classification: quick rules::fixed-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-ai-in-support::Data classification: quick rules"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q004",
+          "category": "vpn",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::fixed-160-40::000",
+            "gitlab-password-guidelines::Passwords at GitLab::fixed-160-40::000",
+            "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)::fixed-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q005",
+          "category": "acceptable_use",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-acceptable-use::Use of External Media on Company Assets"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::fixed-160-40::000",
+            "gitlab-acceptable-use::Use of External Media on Company Assets::fixed-160-40::000",
+            "gitlab-jamf-setup::Prerequisites::fixed-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-acceptable-use::Use of External Media on Company Assets",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q009",
+          "category": "access_control",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?::fixed-160-40::000",
+            "gitlab-data-classification::RED::fixed-160-40::000",
+            "gitlab-jamf-setup::Prerequisites::fixed-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?",
+            "gitlab-data-classification::RED",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q011",
+          "category": "device_management",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment::fixed-160-40::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::fixed-160-40::000",
+            "gitlab-jamf-setup::Prerequisites::fixed-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q012",
+          "category": "device_management",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::fixed-160-40::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::fixed-160-40::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::fixed-160-40::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q013",
+          "category": "data_governance",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-data-classification::RED"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-data-classification::RED::fixed-160-40::000",
+            "gitlab-ai-in-support::Data classification: quick rules::fixed-160-40::000",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect::fixed-160-40::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-data-classification::RED",
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q014",
+          "category": "data_governance",
+          "difficulty": "reasoning",
+          "relevant_parent_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level::fixed-160-40::000",
+            "gitlab-data-classification::RED::fixed-160-40::000",
+            "gitlab-incident-response-guidance::Coordination::fixed-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level",
+            "gitlab-data-classification::RED",
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q015",
+          "category": "phishing",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-password-guidelines::1Password::fixed-160-40::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::fixed-160-40::000",
+            "gitlab-phishing-program::Submission of phishing email via PhishArm::fixed-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-password-guidelines::1Password",
+            "gitlab-acceptable-use::Lost or Stolen Procedures",
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "first_relevant_rank": 3
+        },
+        {
+          "question_id": "q016",
+          "category": "phishing",
+          "difficulty": "ambiguous",
+          "relevant_parent_ids": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::fixed-160-40::000",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive::fixed-160-40::000",
+            "gitlab-password-guidelines::1Password::fixed-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+            "gitlab-password-guidelines::1Password"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q017",
+          "category": "incident_response",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-incident-response-guidance::Identification::fixed-160-40::000",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive::fixed-160-40::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::fixed-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q018",
+          "category": "incident_response",
+          "difficulty": "ambiguous",
+          "relevant_parent_ids": [
+            "gitlab-incident-response-guidance::Identification"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-incident-response-guidance::Identification::fixed-160-40::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::fixed-160-40::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::fixed-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q019",
+          "category": "ai_data_handling",
+          "difficulty": "multi_document",
+          "relevant_parent_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules::fixed-160-40::000",
+            "gitlab-incident-response-guidance::Identification::fixed-160-40::000",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect::fixed-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q020",
+          "category": "service_level",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations::fixed-160-40::000",
+            "gitlab-incident-response-guidance::Coordination::fixed-160-40::000",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment::fixed-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations",
+            "gitlab-incident-response-guidance::Coordination",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "first_relevant_rank": 1
+        }
+      ],
+      "configuration": {
+        "name": "fixed_160_40",
+        "strategy": "fixed_size",
+        "chunk_size": 160,
+        "overlap": 40
+      }
+    },
+    "recursive_80_20": {
+      "manifest": {
+        "strategy": "recursive",
+        "chunk_size": 80,
+        "overlap": 20,
+        "source_count": 10,
+        "chunk_count": 37,
+        "document_versions": {
+          "gitlab-acceptable-use": "64f447db74431493",
+          "gitlab-access-request-faq": "a1ed4a0286271ca0",
+          "gitlab-ai-in-support": "effc25cd256087df",
+          "gitlab-data-classification": "8a1b7a96554b29a5",
+          "gitlab-incident-response-guidance": "26e196b859a2f751",
+          "gitlab-jamf-setup": "032ebb7075ad899b",
+          "gitlab-okta-app-setup": "b460e6c61b279c74",
+          "gitlab-password-guidelines": "86f327b3d3675886",
+          "gitlab-personal-vpn": "da035c21db2ed092",
+          "gitlab-phishing-program": "7486624763a65577"
+        }
+      },
+      "summary": {
+        "evaluated_questions": 16,
+        "recall_at_3": 0.875,
+        "mean_reciprocal_rank": 0.6979166666666666,
+        "mean_query_time_ms": 0.4490052306209691,
+        "average_chunk_characters": 65.97297297297297,
+        "index_growth_ratio": 1.9473684210526316
+      },
+      "questions": [
+        {
+          "question_id": "q001",
+          "category": "password",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::recursive-80-20::000",
+            "gitlab-password-guidelines::Passwords at GitLab::recursive-80-20::000",
+            "gitlab-password-guidelines::1Password::recursive-80-20::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-password-guidelines::1Password"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q002",
+          "category": "password",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-password-guidelines::1Password"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab::recursive-80-20::000",
+            "gitlab-password-guidelines::1Password::recursive-80-20::001",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-80-20::002"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-password-guidelines::1Password",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q003",
+          "category": "security_incident",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::recursive-80-20::000",
+            "gitlab-personal-vpn::What is a personal VPN?::recursive-80-20::000",
+            "gitlab-jamf-setup::Prerequisites::recursive-80-20::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q004",
+          "category": "vpn",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::recursive-80-20::000",
+            "gitlab-password-guidelines::Passwords at GitLab::recursive-80-20::000",
+            "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)::recursive-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q005",
+          "category": "acceptable_use",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-acceptable-use::Use of External Media on Company Assets"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::recursive-80-20::000",
+            "gitlab-acceptable-use::Use of External Media on Company Assets::recursive-80-20::001",
+            "gitlab-jamf-setup::Prerequisites::recursive-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-acceptable-use::Use of External Media on Company Assets",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q009",
+          "category": "access_control",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?::recursive-80-20::000",
+            "gitlab-data-classification::RED::recursive-80-20::000",
+            "gitlab-jamf-setup::Prerequisites::recursive-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?",
+            "gitlab-data-classification::RED",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q011",
+          "category": "device_management",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment::recursive-80-20::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-80-20::001",
+            "gitlab-jamf-setup::Prerequisites::recursive-80-20::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q012",
+          "category": "device_management",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::recursive-80-20::001",
+            "gitlab-jamf-setup::Prerequisites::recursive-80-20::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-80-20::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q013",
+          "category": "data_governance",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-data-classification::RED"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-data-classification::RED::recursive-80-20::000",
+            "gitlab-ai-in-support::Data classification: quick rules::recursive-80-20::000",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect::recursive-80-20::002"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-data-classification::RED",
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q014",
+          "category": "data_governance",
+          "difficulty": "reasoning",
+          "relevant_parent_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level::recursive-80-20::000",
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level::recursive-80-20::001",
+            "gitlab-data-classification::RED::recursive-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level",
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level",
+            "gitlab-data-classification::RED"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q015",
+          "category": "phishing",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-password-guidelines::1Password::recursive-80-20::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::recursive-80-20::000",
+            "gitlab-phishing-program::Submission of phishing email via PhishArm::recursive-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-password-guidelines::1Password",
+            "gitlab-acceptable-use::Lost or Stolen Procedures",
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "first_relevant_rank": 3
+        },
+        {
+          "question_id": "q016",
+          "category": "phishing",
+          "difficulty": "ambiguous",
+          "relevant_parent_ids": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::recursive-80-20::000",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive::recursive-80-20::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 3
+        },
+        {
+          "question_id": "q017",
+          "category": "incident_response",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-incident-response-guidance::Identification::recursive-80-20::000",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive::recursive-80-20::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::recursive-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q018",
+          "category": "incident_response",
+          "difficulty": "ambiguous",
+          "relevant_parent_ids": [
+            "gitlab-incident-response-guidance::Identification"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-incident-response-guidance::Identification::recursive-80-20::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::recursive-80-20::000",
+            "gitlab-incident-response-guidance::Identification::recursive-80-20::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-acceptable-use::Lost or Stolen Procedures",
+            "gitlab-incident-response-guidance::Identification"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q019",
+          "category": "ai_data_handling",
+          "difficulty": "multi_document",
+          "relevant_parent_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules::recursive-80-20::000",
+            "gitlab-incident-response-guidance::Identification::recursive-80-20::001",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q020",
+          "category": "service_level",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations::recursive-80-20::000",
+            "gitlab-okta-app-setup::Timeline Expectations::recursive-80-20::001",
+            "gitlab-incident-response-guidance::Coordination::recursive-80-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations",
+            "gitlab-okta-app-setup::Timeline Expectations",
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "first_relevant_rank": 1
+        }
+      ],
+      "configuration": {
+        "name": "recursive_80_20",
+        "strategy": "recursive",
+        "chunk_size": 80,
+        "overlap": 20
+      }
+    },
+    "recursive_120_20": {
+      "manifest": {
+        "strategy": "recursive",
+        "chunk_size": 120,
+        "overlap": 20,
+        "source_count": 10,
+        "chunk_count": 26,
+        "document_versions": {
+          "gitlab-acceptable-use": "64f447db74431493",
+          "gitlab-access-request-faq": "a1ed4a0286271ca0",
+          "gitlab-ai-in-support": "effc25cd256087df",
+          "gitlab-data-classification": "8a1b7a96554b29a5",
+          "gitlab-incident-response-guidance": "26e196b859a2f751",
+          "gitlab-jamf-setup": "032ebb7075ad899b",
+          "gitlab-okta-app-setup": "b460e6c61b279c74",
+          "gitlab-password-guidelines": "86f327b3d3675886",
+          "gitlab-personal-vpn": "da035c21db2ed092",
+          "gitlab-phishing-program": "7486624763a65577"
+        }
+      },
+      "summary": {
+        "evaluated_questions": 16,
+        "recall_at_3": 0.875,
+        "mean_reciprocal_rank": 0.6770833333333334,
+        "mean_query_time_ms": 0.048330752179026604,
+        "average_chunk_characters": 85.84615384615384,
+        "index_growth_ratio": 1.368421052631579
+      },
+      "questions": [
+        {
+          "question_id": "q001",
+          "category": "password",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::recursive-120-20::000",
+            "gitlab-password-guidelines::Passwords at GitLab::recursive-120-20::000",
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?::recursive-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q002",
+          "category": "password",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-password-guidelines::1Password"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab::recursive-120-20::000",
+            "gitlab-password-guidelines::1Password::recursive-120-20::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-120-20::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-password-guidelines::1Password",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q003",
+          "category": "security_incident",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::recursive-120-20::000",
+            "gitlab-personal-vpn::What is a personal VPN?::recursive-120-20::000",
+            "gitlab-ai-in-support::Data classification: quick rules::recursive-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-ai-in-support::Data classification: quick rules"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q004",
+          "category": "vpn",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::recursive-120-20::000",
+            "gitlab-password-guidelines::Passwords at GitLab::recursive-120-20::000",
+            "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)::recursive-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q005",
+          "category": "acceptable_use",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-acceptable-use::Use of External Media on Company Assets"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::recursive-120-20::000",
+            "gitlab-acceptable-use::Use of External Media on Company Assets::recursive-120-20::001",
+            "gitlab-acceptable-use::Use of External Media on Company Assets::recursive-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-acceptable-use::Use of External Media on Company Assets",
+            "gitlab-acceptable-use::Use of External Media on Company Assets"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q009",
+          "category": "access_control",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?::recursive-120-20::000",
+            "gitlab-data-classification::RED::recursive-120-20::000",
+            "gitlab-jamf-setup::Prerequisites::recursive-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?",
+            "gitlab-data-classification::RED",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q011",
+          "category": "device_management",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-120-20::001",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment::recursive-120-20::000",
+            "gitlab-password-guidelines::1Password::recursive-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment",
+            "gitlab-password-guidelines::1Password"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q012",
+          "category": "device_management",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::recursive-120-20::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-120-20::001",
+            "gitlab-password-guidelines::1Password::recursive-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+            "gitlab-password-guidelines::1Password"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q013",
+          "category": "data_governance",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-data-classification::RED"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-data-classification::RED::recursive-120-20::000",
+            "gitlab-ai-in-support::Data classification: quick rules::recursive-120-20::000",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect::recursive-120-20::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-data-classification::RED",
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q014",
+          "category": "data_governance",
+          "difficulty": "reasoning",
+          "relevant_parent_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level::recursive-120-20::000",
+            "gitlab-incident-response-guidance::Identification::recursive-120-20::001",
+            "gitlab-data-classification::RED::recursive-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level",
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-data-classification::RED"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q015",
+          "category": "phishing",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-password-guidelines::1Password::recursive-120-20::000",
+            "gitlab-phishing-program::Submission of phishing email via PhishArm::recursive-120-20::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::recursive-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-password-guidelines::1Password",
+            "gitlab-phishing-program::Submission of phishing email via PhishArm",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q016",
+          "category": "phishing",
+          "difficulty": "ambiguous",
+          "relevant_parent_ids": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::recursive-120-20::000",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive::recursive-120-20::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 3
+        },
+        {
+          "question_id": "q017",
+          "category": "incident_response",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-incident-response-guidance::Identification::recursive-120-20::000",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive::recursive-120-20::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::recursive-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q018",
+          "category": "incident_response",
+          "difficulty": "ambiguous",
+          "relevant_parent_ids": [
+            "gitlab-incident-response-guidance::Identification"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-incident-response-guidance::Identification::recursive-120-20::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::recursive-120-20::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-acceptable-use::Lost or Stolen Procedures",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q019",
+          "category": "ai_data_handling",
+          "difficulty": "multi_document",
+          "relevant_parent_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules::recursive-120-20::000",
+            "gitlab-incident-response-guidance::Identification::recursive-120-20::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q020",
+          "category": "service_level",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations::recursive-120-20::000",
+            "gitlab-incident-response-guidance::Coordination::recursive-120-20::000",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment::recursive-120-20::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations",
+            "gitlab-incident-response-guidance::Coordination",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "first_relevant_rank": 1
+        }
+      ],
+      "configuration": {
+        "name": "recursive_120_20",
+        "strategy": "recursive",
+        "chunk_size": 120,
+        "overlap": 20
+      }
+    },
+    "recursive_160_40": {
+      "manifest": {
+        "strategy": "recursive",
+        "chunk_size": 160,
+        "overlap": 40,
+        "source_count": 10,
+        "chunk_count": 24,
+        "document_versions": {
+          "gitlab-acceptable-use": "64f447db74431493",
+          "gitlab-access-request-faq": "a1ed4a0286271ca0",
+          "gitlab-ai-in-support": "effc25cd256087df",
+          "gitlab-data-classification": "8a1b7a96554b29a5",
+          "gitlab-incident-response-guidance": "26e196b859a2f751",
+          "gitlab-jamf-setup": "032ebb7075ad899b",
+          "gitlab-okta-app-setup": "b460e6c61b279c74",
+          "gitlab-password-guidelines": "86f327b3d3675886",
+          "gitlab-personal-vpn": "da035c21db2ed092",
+          "gitlab-phishing-program": "7486624763a65577"
+        }
+      },
+      "summary": {
+        "evaluated_questions": 16,
+        "recall_at_3": 0.8125,
+        "mean_reciprocal_rank": 0.6458333333333334,
+        "mean_query_time_ms": 0.0481381212011911,
+        "average_chunk_characters": 95.58333333333333,
+        "index_growth_ratio": 1.263157894736842
+      },
+      "questions": [
+        {
+          "question_id": "q001",
+          "category": "password",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::recursive-160-40::000",
+            "gitlab-password-guidelines::Passwords at GitLab::recursive-160-40::000",
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?::recursive-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q002",
+          "category": "password",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-password-guidelines::1Password"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab::recursive-160-40::000",
+            "gitlab-password-guidelines::1Password::recursive-160-40::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-160-40::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-password-guidelines::1Password",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q003",
+          "category": "security_incident",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::recursive-160-40::000",
+            "gitlab-personal-vpn::What is a personal VPN?::recursive-160-40::000",
+            "gitlab-ai-in-support::Data classification: quick rules::recursive-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-ai-in-support::Data classification: quick rules"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q004",
+          "category": "vpn",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::recursive-160-40::000",
+            "gitlab-password-guidelines::Passwords at GitLab::recursive-160-40::000",
+            "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)::recursive-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-password-guidelines::Passwords at GitLab",
+            "gitlab-access-request-faq::I need access to the Rails or database production console (grpd)"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q005",
+          "category": "acceptable_use",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-acceptable-use::Use of External Media on Company Assets"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?::recursive-160-40::000",
+            "gitlab-acceptable-use::Use of External Media on Company Assets::recursive-160-40::000",
+            "gitlab-jamf-setup::Prerequisites::recursive-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-personal-vpn::What is a personal VPN?",
+            "gitlab-acceptable-use::Use of External Media on Company Assets",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q009",
+          "category": "access_control",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?::recursive-160-40::000",
+            "gitlab-data-classification::RED::recursive-160-40::000",
+            "gitlab-jamf-setup::Prerequisites::recursive-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-access-request-faq::My AR request has been open for a while, how can I get traction on it?",
+            "gitlab-data-classification::RED",
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q011",
+          "category": "device_management",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-160-40::001",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment::recursive-160-40::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 2
+        },
+        {
+          "question_id": "q012",
+          "category": "device_management",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::recursive-160-40::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-160-40::001",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q013",
+          "category": "data_governance",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-data-classification::RED"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-data-classification::RED::recursive-160-40::000",
+            "gitlab-ai-in-support::Data classification: quick rules::recursive-160-40::000",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect::recursive-160-40::001"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-data-classification::RED",
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q014",
+          "category": "data_governance",
+          "difficulty": "reasoning",
+          "relevant_parent_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level::recursive-160-40::000",
+            "gitlab-data-classification::RED::recursive-160-40::000",
+            "gitlab-incident-response-guidance::Coordination::recursive-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-data-classification::Combinations of data types may result in a higher system classification level",
+            "gitlab-data-classification::RED",
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q015",
+          "category": "phishing",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-password-guidelines::1Password::recursive-160-40::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::recursive-160-40::000",
+            "gitlab-phishing-program::Submission of phishing email via PhishArm::recursive-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-password-guidelines::1Password",
+            "gitlab-acceptable-use::Lost or Stolen Procedures",
+            "gitlab-phishing-program::Submission of phishing email via PhishArm"
+          ],
+          "first_relevant_rank": 3
+        },
+        {
+          "question_id": "q016",
+          "category": "phishing",
+          "difficulty": "ambiguous",
+          "relevant_parent_ids": [
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-jamf-setup::Prerequisites::recursive-160-40::000",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive::recursive-160-40::000",
+            "gitlab-password-guidelines::1Password::recursive-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-jamf-setup::Prerequisites",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+            "gitlab-password-guidelines::1Password"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q017",
+          "category": "incident_response",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-incident-response-guidance::Coordination"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-incident-response-guidance::Identification::recursive-160-40::000",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive::recursive-160-40::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::recursive-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-acceptable-use::Use of file sharing services other than GitLab\u2019s Google Drive",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "first_relevant_rank": null
+        },
+        {
+          "question_id": "q018",
+          "category": "incident_response",
+          "difficulty": "ambiguous",
+          "relevant_parent_ids": [
+            "gitlab-incident-response-guidance::Identification"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-incident-response-guidance::Identification::recursive-160-40::000",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious::recursive-160-40::000",
+            "gitlab-acceptable-use::Lost or Stolen Procedures::recursive-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-phishing-program::What to do if you suspect something else is suspicious",
+            "gitlab-acceptable-use::Lost or Stolen Procedures"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q019",
+          "category": "ai_data_handling",
+          "difficulty": "multi_document",
+          "relevant_parent_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules::recursive-160-40::000",
+            "gitlab-incident-response-guidance::Identification::recursive-160-40::000",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect::recursive-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-ai-in-support::Data classification: quick rules",
+            "gitlab-incident-response-guidance::Identification",
+            "gitlab-data-classification::Credentials and access tokens are classified at the same level as the data they protect"
+          ],
+          "first_relevant_rank": 1
+        },
+        {
+          "question_id": "q020",
+          "category": "service_level",
+          "difficulty": "direct",
+          "relevant_parent_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations"
+          ],
+          "retrieved_chunk_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations::recursive-160-40::000",
+            "gitlab-incident-response-guidance::Coordination::recursive-160-40::000",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment::recursive-160-40::000"
+          ],
+          "retrieved_parent_ids": [
+            "gitlab-okta-app-setup::Timeline Expectations",
+            "gitlab-incident-response-guidance::Coordination",
+            "gitlab-jamf-setup::Step 1: Verify Jamf Enrollment"
+          ],
+          "first_relevant_rank": 1
+        }
+      ],
+      "configuration": {
+        "name": "recursive_160_40",
+        "strategy": "recursive",
+        "chunk_size": 160,
+        "overlap": 40
+      }
+    }
+  }
+}

@@ -18,6 +18,12 @@ RETRIEVAL_RESULTS = (
     / "baselines"
     / "retrieval-comparison-v0.2.json"
 )
+CHUNKING_RESULTS = (
+    ROOT
+    / "artifacts"
+    / "baselines"
+    / "chunking-comparison-v0.1.json"
+)
 WORKFLOW_RESULTS = (
     ROOT
     / "artifacts"
@@ -101,6 +107,35 @@ def retrieval_failures(results: dict) -> pd.DataFrame:
 
     return pd.DataFrame(rows)
 
+def chunking_frame(results: dict) -> pd.DataFrame:
+    """Convert chunking experiment summaries into dashboard rows."""
+    rows = []
+
+    for name, report in results["results"].items():
+        configuration = report["configuration"]
+        manifest = report["manifest"]
+        summary = report["summary"]
+
+        rows.append(
+            {
+                "configuration": name,
+                "strategy": configuration["strategy"],
+                "chunk_size": configuration["chunk_size"],
+                "overlap": configuration["overlap"],
+                "chunks": manifest["chunk_count"],
+                "average_characters": summary[
+                    "average_chunk_characters"
+                ],
+                "index_growth": summary["index_growth_ratio"],
+                "recall_at_3": summary["recall_at_3"],
+                "mrr": summary["mean_reciprocal_rank"],
+                "mean_latency_ms": summary[
+                    "mean_query_time_ms"
+                ],
+            }
+        )
+
+    return pd.DataFrame(rows)
 
 st.set_page_config(
     page_title="Enterprise RAG Reliability",
@@ -157,6 +192,7 @@ st.caption(
 
 retrieval_results = load_json(RETRIEVAL_RESULTS)
 workflow_results = load_json(WORKFLOW_RESULTS)
+chunking_results = load_json(CHUNKING_RESULTS)
 answer_quality_results = load_json(ANSWER_QUALITY_RESULTS)
 model_comparison_results = load_json(
     MODEL_COMPARISON_RESULTS
@@ -165,8 +201,10 @@ quality_gates = load_json(QUALITY_GATES)
 sources = load_json(SOURCES)
 benchmark = load_json(BENCHMARK)
 
+
 retrieval_df = retrieval_frame(retrieval_results)
 failure_df = retrieval_failures(retrieval_results)
+chunking_df = chunking_frame(chunking_results)
 model_df = model_comparison_frame(
     model_comparison_results
 )
@@ -179,6 +217,7 @@ answer_quality_summary = answer_quality_results["summary"]
 (
     overview_tab,
     retrieval_tab,
+    chunking_tab,
     answer_quality_tab,
     model_comparison_tab,
     workflow_tab,
@@ -187,6 +226,7 @@ answer_quality_summary = answer_quality_results["summary"]
     [
         "Overview",
         "Retrieval experiments",
+        "Chunking experiments",
         "Answer quality",
         "Model comparison",
         "Workflow decisions",
@@ -512,6 +552,135 @@ with retrieval_tab:
         "Latency values come from one local run over a small corpus and are "
         "directional rather than production benchmarks."
     )
+with chunking_tab:
+    st.subheader("Chunking quality and index-size tradeoff")
+
+    best_chunking = chunking_df.loc[
+        chunking_df["mrr"].idxmax()
+    ]
+    best_recall_chunking = chunking_df.loc[
+        chunking_df["recall_at_3"].idxmax()
+    ]
+
+    chunking_metrics = st.columns(4)
+    chunking_metrics[0].metric(
+        "Selected configuration",
+        "Fixed 80/20",
+    )
+    chunking_metrics[1].metric(
+        "Best Recall@3",
+        f"{best_recall_chunking['recall_at_3']:.1%}",
+    )
+    chunking_metrics[2].metric(
+        "Best MRR",
+        f"{best_chunking['mrr']:.4f}",
+    )
+    chunking_metrics[3].metric(
+        "Selected index growth",
+        "1.95x",
+    )
+
+    chunking_quality_long = chunking_df.melt(
+        id_vars=["configuration"],
+        value_vars=["recall_at_3", "mrr"],
+        var_name="metric",
+        value_name="score",
+    )
+
+    chunking_quality_chart = px.bar(
+        chunking_quality_long,
+        x="configuration",
+        y="score",
+        color="metric",
+        barmode="group",
+        range_y=[0, 1],
+        labels={
+            "configuration": "Configuration",
+            "score": "Score",
+            "metric": "Metric",
+        },
+        color_discrete_map={
+            "recall_at_3": "#2563EB",
+            "mrr": "#14B8A6",
+        },
+    )
+    chunking_quality_chart.update_layout(
+        legend={
+            "orientation": "h",
+            "yanchor": "bottom",
+            "y": 1.02,
+            "xanchor": "left",
+            "x": 0,
+        },
+        legend_title_text="",
+    )
+    st.plotly_chart(
+        chunking_quality_chart,
+        width="stretch",
+    )
+
+    st.subheader("Retrieval quality and index growth")
+
+    chunking_tradeoff_chart = px.scatter(
+        chunking_df,
+        x="index_growth",
+        y="recall_at_3",
+        size="average_characters",
+        color="strategy",
+        hover_name="configuration",
+        hover_data=[
+            "chunks",
+            "mrr",
+            "chunk_size",
+            "overlap",
+        ],
+        labels={
+            "index_growth": "Index growth ratio",
+            "recall_at_3": "Recall@3",
+            "average_characters": "Average characters",
+            "strategy": "Strategy",
+        },
+    )
+    chunking_tradeoff_chart.update_layout(
+        legend={
+            "orientation": "h",
+            "yanchor": "bottom",
+            "y": 1.02,
+            "xanchor": "left",
+            "x": 0,
+        },
+        legend_title_text="",
+    )
+    st.plotly_chart(
+        chunking_tradeoff_chart,
+        width="stretch",
+    )
+
+    st.dataframe(
+        chunking_df.style.format(
+            {
+                "average_characters": "{:.1f}",
+                "index_growth": "{:.2f}x",
+                "recall_at_3": "{:.1%}",
+                "mrr": "{:.4f}",
+                "mean_latency_ms": "{:.3f}",
+            }
+        ),
+        width="stretch",
+        hide_index=True,
+    )
+
+    st.success(
+        "Fixed 80/20 improved Recall@3 from 81.25% to 87.50% "
+        "and MRR from 0.6875 to 0.6979."
+    )
+
+    st.caption(
+        "The selected configuration nearly doubles the index. "
+        "Results use BM25 over 16 answerable cases; latency values "
+        "are directional measurements from one local run."
+    )
+
 with answer_quality_tab:
     st.subheader("Grounding and answer-quality evaluation")
 
