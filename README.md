@@ -115,3 +115,18 @@ caffeinate -i env PYTHONPATH=src \
 ```
 The experiment records answer quality, evidence support, citation correctness, structured-output reliability, latency, token usage, cost, and failures. Local inference has zero API cost, while compute and operational costs remain outside the current estimate.
 See [local model comparison](docs/model-comparison.md) for results, failure analysis, reproducibility notes, and metric limitations.
+
+## Document processing and chunking
+
+The versioned document-processing pipeline validates public-source metadata,
+preserves headings and provenance, generates stable content hashes, and tracks experimental chunks back to their original passages.
+
+Seven heading-aware, fixed-size, and recursive configurations were compared
+with BM25 while keeping retrieval settings constant. Fixed 80-character chunks with 20-character overlap improved Recall@3 from 81.25% to 87.50% and MRR from 0.6875 to 0.6979, while increasing the index from 19 to 37 chunks.
+
+```bash
+PYTHONPATH=src python scripts/run_chunking_experiments.py
+```
+See [document processing and chunking experiments](docs/chunking-experiments.md)
+for configuration details, question-level analysis, version tracking, and
+limitations.
