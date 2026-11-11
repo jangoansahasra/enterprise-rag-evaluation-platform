@@ -1,0 +1,13 @@
+services:
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dashboard
+    image: enterprise-rag-reliability:local
+    ports:
+      - "${STREAMLIT_PORT:-8501}:8501"
+    environment:
+      PYTHONUNBUFFERED: "1"
+    init: true
+    restart: unless-stopped
