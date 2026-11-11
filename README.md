@@ -130,3 +130,26 @@ PYTHONPATH=src python scripts/run_chunking_experiments.py
 See [document processing and chunking experiments](docs/chunking-experiments.md)
 for configuration details, question-level analysis, version tracking, and
 limitations.
+
+## Docker deployment
+
+The repository provides a lightweight saved-results dashboard image and a
+separate complete experiment-pipeline target.
+
+```bash
+docker compose build
+docker compose up -d
+```
+Open http://localhost:8501 to view the credential-free dashboard
+
+The tested dashboard container passed its Docker health check and HTTP health
+endpoint. Separating dashboard and pipeline dependencies reduced the dashboard image from 10.8 GB to 878 MB.
+
+Build the complete reproducible pipeline separately:
+```bash
+docker build \
+  --target pipeline \
+  --tag enterprise-rag-pipeline:local \
+  .
+```
+See [Docker deployment](docs/docker-deployment.md) for health checks, security controls, port configuration, pipeline commands, and reproducibility limits.
