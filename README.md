@@ -153,3 +153,19 @@ docker build \
   .
 ```
 See [Docker deployment](docs/docker-deployment.md) for health checks, security controls, port configuration, pipeline commands, and reproducibility limits.
+
+## Architecture and responsible-AI documentation
+
+The [architecture document](docs/architecture.md) describes the verified data
+layer, document processing, retrieval experiments, controlled LangGraph
+workflow, model abstraction, evaluation systems, observability, CI gates, and
+Docker deployment.
+
+The [system card](docs/system-card.md) documents intended use, excluded use,
+data provenance, recorded performance, safety controls, human oversight,
+security considerations, limitations, monitoring, and the current
+production-readiness decision.
+
+The [model card](docs/model-card.md) documents the local Llama, Mistral, and Phi
+comparison, structured-output controls, selection guidance, failure analysis,
+metric limitations, and reproducibility.
