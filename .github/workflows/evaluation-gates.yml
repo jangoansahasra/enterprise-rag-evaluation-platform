@@ -59,5 +59,7 @@ jobs:
       - name: Run unit tests
         run: python -m pytest -q
 
-      - name: Apply deterministic quality gates
+      - name: Apply live RAG regression gates
+        env:
+          HF_HUB_DISABLE_TELEMETRY: "1"
         run: python scripts/check_quality_gates.py

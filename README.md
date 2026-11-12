@@ -166,6 +166,6 @@ data provenance, recorded performance, safety controls, human oversight,
 security considerations, limitations, monitoring, and the current
 production-readiness decision.
 
-The [model card](docs/model-card.md) documents the local Llama, Mistral, and Phi
-comparison, structured-output controls, selection guidance, failure analysis,
-metric limitations, and reproducibility.
+The [model card](docs/model-card.md) documents the local Llama, Mistral, and Phi comparison, structured-output controls, selection guidance, failure analysis, metric limitations, and reproducibility.
+
+[Live CI RAG regression gates](docs/ci-regression-gates.md) enforce retrieval, grounding, citation, refusal, and escalation thresholds on every relevant change.
