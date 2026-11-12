@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "dataset": {
     "minimum_sources": 10,
     "minimum_corpus_passages": 19,
@@ -8,5 +8,17 @@
   "retrieval": {
     "minimum_recall_at_3": 0.8,
     "minimum_mean_reciprocal_rank": 0.65
+  },
+  "workflow": {
+    "minimum_decision_accuracy": 0.95
+  },
+  "answer_quality": {
+    "minimum_answer_correctness": 0.5,
+    "minimum_faithfulness": 0.95,
+    "maximum_hallucination_rate": 0.05,
+    "minimum_citation_precision": 0.95,
+    "minimum_citation_recall": 0.95,
+    "minimum_refusal_accuracy": 1.0,
+    "minimum_escalation_accuracy": 1.0
   }
 }
