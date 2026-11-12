@@ -4,6 +4,7 @@
 ![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Reproducible-2496ED?logo=docker&logoColor=white)
 ![Data source](https://img.shields.io/badge/Data-Public%20GitLab%20Handbook-FC6D26)
+[![Live dashboard](https://img.shields.io/badge/Live%20Dashboard-Open-FF4B4B?logo=streamlit&logoColor=white)](https://enterprise-rag-evaluation.streamlit.app/)
 
 A production-oriented platform for measuring whether enterprise RAG and LLM systems are accurate, grounded, safe, cost-effective, and ready for release.
 
@@ -14,6 +15,8 @@ The evaluated application is an enterprise IT support and policy assistant groun
 ## Reliability dashboard
 
 ![Enterprise RAG reliability dashboard overview](docs/images/dashboard-overview.jpg)
+
+**[Open the live reliability dashboard →](https://enterprise-rag-evaluation.streamlit.app/)**
 
 The credential-free dashboard presents versioned evaluation results immediately, even when hosted-model endpoints are unavailable.
 
